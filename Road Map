@@ -1,2 +1,3 @@
 R-TOD: Real-Time Object Detector with Minimized End-to-End Delay for Autonomous Driving Makalesindeki abstract kısmı çok kritik
 Latency kısmı için faydalı bir makale
+"Inference Delay" vs. "End-to-End Delay" Farkı
