@@ -1,6 +1,47 @@
 - The impact of programming language choice on execution time when performing virtual simulation with a driver model
 A comparison of C++ and Python performance using the open simulation interface (OSI) in esmini makalesi benim tezimin Metodolojik İkizi.
-Nasıl faydalanılabilir: Bu makalede de bazı noktalarda python dilinin yetersiz kaldığına dikkat çekilmiş. Bu sebeple hibrit mimari kullanılarak
-tez ortaya konulmuş. Benim tezim de bu temelden yola çıkacak.
+Nasıl faydalanılabilir: Bu makalede de bazı noktalarda python dilinin yetersiz kaldığına dikkat çekilmiş. 
+Bu sebeple hibrit mimari kullanılarak tez ortaya konulmuş. Benim tezim de bu temelden yola çıkacak.
+---------------------------------------------------------------------------------
+- Image quality assessment using block-based weighted SVD makalesinde 
+Neden Uygun? (Ağır Matematik = C++ Şovu) Makale, görüntü bloklarının tekil vektörleri (singular vectors) ve kovaryans matrisinin özvektörleri (eigenvectors) üzerinden hesaplama yapılmasını öneriyor.
 
-- 
+Python'un Kabusu: "Block-based" (blok tabanlı) işlem demek, görüntü üzerinde binlerce küçük pencerede döngü kurmak demektir. Python bu döngülerde çok yavaştır. 
+Ayrıca SVD (Singular Value Decomposition) hesaplaması işlemciyi çok yorar.
+
+C++'ın Gücü: Sen tezinde, "Görüntü kalitesini'de önerilen ileri seviye matematiksel yöntemlerle ölçtüğümde, C++'ın matris kütüphaneleri (Eigen veya Armadillo) 
+sayesinde Python'dan 50 kat daha hızlı sonuç aldım" diyebilirsin.
+---------------------------------------------------------------------------------
+- A modern C++ Point of view of programming in image processing
+
+Bu makalede C++20 standartlarıyla görüntü işlemenin performansı ve generic programlamanın pythona göre daha hızlı çalıştığı gibi bazı performans analizleri yapılmıştır. 
+
+Bu makaleden yola çıkarak:
+Makalede şu ifade geçiyor: "Generic programming makes it possible to develop and reuse bricks of software on objects (images) of different natures (types) without performance loss.".
+
+Python'un Durumu (Duck Typing): Python'da bir fonksiyon yazarsın (def islem(resim):). Bu fonksiyona siyah-beyaz (8-bit) resim de atsan, renkli (24-bit) de atsan, ondalıklı (float) veri de atsan çalışır. 
+AMA Python bunu yapmak için çalışırken sürekli "Bu gelen veri ne?" diye kontrol eder. Bu da sistemi yavaşlatır.
+
+C++'ın Durumu (Templates): C++'ta "Template" (Şablon) kullanarak kodu bir kere yazarsın. Derleyici (Compiler), kullandığın her veri tipi (int, float, double) için arka planda o kodun özel ve optimize 
+edilmiş bir kopyasını oluşturur.
+
+Tezindeki Vuruş:
+
+"Python'un esnekliği (dinamik tipleme) çalışma zamanında performans kaybına yol açarken; C++'ın Generic Programming yeteneği sayesinde algoritma bir kez yazılmış, hem 8-bit hem de 16-bit 
+görüntüler için 'performans kaybı olmaksızın' (without performance loss) derleme zamanında optimize edilmiştir."
+---------------------------------------------------------------------------------
+- Investigation of key parameters to define stop condition in image denoising algorithms based on thediffusion equation makalesi
+
+C++ ve Python savaşında kullanacağın en net "Algoritmik Karmaşıklık" (Computational Complexity) argümanını sana gümüş tepside sunuyor.
+
+Makale "Diffusion Equation" (Difüzyon Denklemi) üzerine kurulu. Difüzyon, bir görüntüyü temizlemek için aynı matematiksel işlemi defalarca (örneğin 100 kere) üst üste uygulamak demektir.
+
+Senin İçin Fırsat: Python'un en zayıf olduğu yer "döngülerdir" (loops). C++ ise döngüleri çok sever.
+
+Deney Senaryon:
+
+"Difüzyon algoritmasını Python'da çalıştırdığımda, her iterasyon (tekrar) yorumlayıcı yüzünden gecikti ve toplam süre 5 saniye sürdü. 
+C++'ta ise aynı 100 iterasyon, derleyici optimizasyonları sayesinde 0.2 saniyede bitti."
+
+Bu makale sayesinde, "Basit bir filtre yerine neden bu kadar ağır bir matematik (Difüzyon) kullandın?" sorusuna, 
+"Literatürde [Bu Makale]'nin belirttiği yüksek başarıyı test etmek için" cevabını verebilirsin.
