@@ -45,3 +45,13 @@ C++'ta ise aynı 100 iterasyon, derleyici optimizasyonları sayesinde 0.2 saniye
 
 Bu makale sayesinde, "Basit bir filtre yerine neden bu kadar ağır bir matematik (Difüzyon) kullandın?" sorusuna, 
 "Literatürde [Bu Makale]'nin belirttiği yüksek başarıyı test etmek için" cevabını verebilirsin.
+-------------------------------------------------------------------------------------
+- Developing Riemann–Liouville-Fractional Masks for Image Enhancement makalesi
+
+Makalede geçen yöntemler (Riemann–Liouville fractional integration, Grünwald–Letnikov scheme) standart görüntü işleme kütüphanelerinde (OpenCV vb.) hazır bulunmaz.
+
+Risk: Bunları sıfırdan kodlamaya çalışmak aylarını alabilir.
+
+Sorun: Bu algoritmalar o kadar yoğun matematik içerir ki, Python'da çalıştırdığında tek bir kareyi işlemesi saniyeler (hatta dakikalar) sürebilir. Bu da senin "Gerçek Zamanlı" hedefini bozar.
+------------------------------------------------------------------------------------
+- 
