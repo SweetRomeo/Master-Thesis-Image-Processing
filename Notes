@@ -1,0 +1,6 @@
+- The impact of programming language choice on execution time when performing virtual simulation with a driver model
+A comparison of C++ and Python performance using the open simulation interface (OSI) in esmini makalesi benim tezimin Metodolojik İkizi.
+Nasıl faydalanılabilir: Bu makalede de bazı noktalarda python dilinin yetersiz kaldığına dikkat çekilmiş. Bu sebeple hibrit mimari kullanılarak
+tez ortaya konulmuş. Benim tezim de bu temelden yola çıkacak.
+
+- 
