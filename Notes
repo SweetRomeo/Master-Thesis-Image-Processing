@@ -54,4 +54,14 @@ Risk: Bunları sıfırdan kodlamaya çalışmak aylarını alabilir.
 
 Sorun: Bu algoritmalar o kadar yoğun matematik içerir ki, Python'da çalıştırdığında tek bir kareyi işlemesi saniyeler (hatta dakikalar) sürebilir. Bu da senin "Gerçek Zamanlı" hedefini bozar.
 ------------------------------------------------------------------------------------
-- 
+- Research on Image Signal Enhancement and Denoising Algorithms for Intelligent Communication Systems
+
+Bu metin, senin tezinin temel hipotezini ("Python yavaştır, C++ ile hibrit yapı şarttır") doğrudan doğruluyor.
+
+Kanıt 1 (Mimari): Metindeki "The system is developed using a hybrid C++ and Python framework" ifadesi, senin seçtiğin mimarinin literatürde kabul gördüğünü ve 
+modern bir yaklaşım olduğunu ispatlar. Jüriye "Ben bunu uydurmadım, literatürdeki trend bu" diyebilirsin.
+
+Kanıt 2 (Verimlilik): "processing efficiency" vurgusu, senin performans ölçümlerinin (FPS, süre) akademik bir değeri olduğunu gösterir.
+
+Kanıt 3 (Algoritmalar): "adaptive histogram equalization based on blocks" (muhtemelen CLAHE) ve "multi-scale edge detection" ifadeleri, senin kullanmayı düşündüğün Retinex (MSR) veya Histogram tabanlı yöntemlerle çok benzer mantıktadır. 
+Bu da senin doğru algoritmaları seçtiğini destekler.
