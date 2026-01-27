@@ -65,3 +65,34 @@ Kanıt 2 (Verimlilik): "processing efficiency" vurgusu, senin performans ölçü
 
 Kanıt 3 (Algoritmalar): "adaptive histogram equalization based on blocks" (muhtemelen CLAHE) ve "multi-scale edge detection" ifadeleri, senin kullanmayı düşündüğün Retinex (MSR) veya Histogram tabanlı yöntemlerle çok benzer mantıktadır. 
 Bu da senin doğru algoritmaları seçtiğini destekler.
+-------------------------------------------------------------------------------------
+- ADAPTIVE ILLUMINATION CORRECTION ALGORITHM BASED ON RETINEX TECHNOLOGY FOR CAMERA TRAP IMAGES makalesi
+
+Benzerlik: Araştırmacılar görüntüleri "Düşük Işık", "Normal" ve "Yüksek Işık" olarak 3 kategoriye ayırmış. 
+Düşük ışık için ağır Retinex işlemleri, normal ışık için basit renk uzayı dönüşümleri kullanmışlar.
+
+Senin İçin Değeri: Senin "Gündüz -> Gamma, Karanlık -> MSR" mantığının literatürdeki birebir karşılığıdır.
+
+-------------------------------------------------------------------------------------
+- Enhancement of low-light images using Sakaguchi-type functionbased cost-effective filtering
+
+Makalenin sonunda kodların MATLAB ile yazıldığı belirtilmiş.
+
+Fırsat: MATLAB genelde akademik araştırma için harikadır ama gerçek zamanlı (Real-time) çalışan bir otonom araçta veya gömülü sistemde kullanılmaz.
+
+Kullanımı: "Mevcut literatürdeki (örn: [Bu Makale]) pek çok gelişmiş algoritma, MATLAB gibi prototipleme ortamlarında geliştirilmektedir.
+Ancak bu algoritmaların endüstriyel ve gerçek zamanlı kullanımı için, bu tezde önerilen C++ tabanlı hibrit mimariye taşınması (port edilmesi) bir zorunluluktur."
+-------------------------------------------------------------------------------------
+- Performance Comparison of Different Retinex Methods on Enhancement of Low Light Cave Images
+
+Benzerlik: Mağara (zifiri karanlık) fotoğrafları üzerinde SSR, MSR ve LIME algoritmalarını kıyaslamışlar. Karanlık arttıkça MSR'nin kalitesinin (PSNR) arttığını ama işlem süresinin uzadığını raporlamışlar.
+-------------------------------------------------------------------------------------
+- Comparative Analysis of C++ and Python in Terms of Memory and Time
+
+Bu makale temel olarak C++ ve Python dillerinin karşılaştırmasını yapmaktadır. Neden Python değil de C++ kullandın sorusuna bu makaleden de faydalanarak cevap verilebilir.
+-------------------------------------------------------------------------------------
+Yol Haritası
+- Deneyde kullanılacak görüntü iyileştirme algoritmalarını öğren
+- Söz konusu algoritmaların C++ ve Pythonda nasıl implemente edileceğini bul ve kodunu yaz.
+- OpenCv kütüphanesinin nasıl kullanıldığını öğren.
+
