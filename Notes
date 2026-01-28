@@ -92,7 +92,20 @@ Benzerlik: Mağara (zifiri karanlık) fotoğrafları üzerinde SSR, MSR ve LIME 
 Bu makale temel olarak C++ ve Python dillerinin karşılaştırmasını yapmaktadır. Neden Python değil de C++ kullandın sorusuna bu makaleden de faydalanarak cevap verilebilir.
 -------------------------------------------------------------------------------------
 Yol Haritası
-- Deneyde kullanılacak görüntü iyileştirme algoritmalarını öğren
+- Deneyde kullanılacak görüntü iyileştirme algoritmalarını öğren.
 - Söz konusu algoritmaların C++ ve Pythonda nasıl implemente edileceğini bul ve kodunu yaz.
+  - Gamma Correction Algorithm: Bu algoritmanın karmaşıklığı zaman karmaşıklığına göre O(1) karmaşıklığına sahiptir ve python-C++ karşılaştırması çok farklı sonuçlar vermeyebilir. Bu sebeple diğer algoritmaların
+  da denenmesi gerekmektedir.
+  Matematiksel Mantık: Her pikselin değerini bir kuvvetle çarpar.
+  Denklem: $$V_{out} = A \cdot V_{in}^\gamma$$
+  Kullanılacağı Ortam: İyi ışık / Gündüz.   
+  - Histogram Equalization: 
+  Matematiksel Mantık: Görüntüdeki piksel yoğunluklarının (0-255 arası) dağılımını (CDF) hesaplar ve bunu tüm aralığa yayar.
+  İşlem Türü: İstatistiksel işlem. Tüm görüntüyü tarayıp sayım yapmayı gerektirir.
+  Kullanılacağı Ortam: Orta Işık / Akşamüstü.
+  - Single Scale Retinex (SSR)
+  
 - OpenCv kütüphanesinin nasıl kullanıldığını öğren.
+  - 
+
 
