@@ -1,3 +1,11 @@
-R-TOD: Real-Time Object Detector with Minimized End-to-End Delay for Autonomous Driving Makalesindeki abstract kısmı çok kritik
-Latency kısmı için faydalı bir makale
-"Inference Delay" vs. "End-to-End Delay" Farkı
+Potansiyel başlıklar
+- Performance Analysis of Hybrid C++/Python Architectures for Low-Light Image Enhancement in Autonomous Vehicles
+- Real-Time Low-Light Enhancement in Autonomous Driving Systems: A Comparative Analysis of Pure Python and Hybrid Approaches
+- Enhancing Autonomous Vehicle Perception in Night Driving Conditions: A Study on Computational Cost and Image Quality
+
+Kullanılacak algoritmalar ve kullanılacağı koşullar:
+    Algoritma Adı          İşlem Tipi          Karmaşıklık(Yük)      Python Durumu        C++/Python Hibrit Durumu      Hangi ışıkta
+1-) Gamma Correction       Üs Alma             Çok Düşük             Hızlı                Çok Hızlı                     İyi ışık
+2-) Histogram Equation     İstatistik/Sayma    Orta                  Orta                 Çok Hızlı                     Orta ışık
+3-) SSR(Retinex)           Konvolüsyon         Yüksek                Yavaş(Darboğaz)      Hızlı                         Düşük ışık
+4-) MSR(Retinex)           3x Konvolüsyon	     Çok Yüksek	           Çok Yavaş (Kritik)	  Akıcı	                        Karanlık
