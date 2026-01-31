@@ -4,8 +4,8 @@ Potansiyel başlıklar
 - Enhancing Autonomous Vehicle Perception in Night Driving Conditions: A Study on Computational Cost and Image Quality
 
 Kullanılacak algoritmalar ve kullanılacağı koşullar:
-    Algoritma Adı          İşlem Tipi          Karmaşıklık(Yük)      Python Durumu        C++/Python Hibrit Durumu      Hangi ışıkta
-1-) Gamma Correction       Üs Alma             Çok Düşük             Hızlı                Çok Hızlı                     İyi ışık
-2-) Histogram Equation     İstatistik/Sayma    Orta                  Orta                 Çok Hızlı                     Orta ışık
-3-) SSR(Retinex)           Konvolüsyon         Yüksek                Yavaş(Darboğaz)      Hızlı                         Düşük ışık
+    Algoritma Adı          İşlem Tipi          Karmaşıklık(Yük)      Python Durumu            C++/Python Hibrit Durumu      Hangi ışıkta
+1-) Gamma Correction       Üs Alma             Çok Düşük             Hızlı                    Çok Hızlı                     İyi ışık
+2-) Histogram Equation     İstatistik/Sayma    Orta                  Orta                     Çok Hızlı                     Orta ışık
+3-) SSR(Retinex)           Konvolüsyon         Yüksek                Yavaş(Darboğaz)          Hızlı                         Düşük ışık
 4-) MSR(Retinex)           3x Konvolüsyon	     Çok Yüksek	           Çok Yavaş (Kritik)	  Akıcı	                        Karanlık
