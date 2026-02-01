@@ -14,3 +14,7 @@ A non-linear operation used to encode and decode luminance or tristimulus values
 The transformation is defined as:
 
 $$V_{out} = V_{in}^{\gamma}$$
+
+For 8-bit images ($0-255$), the normalized formula used in our C++ kernel is:
+
+$$O(x,y) = 255 \times \left( \frac{I(x,y)}{255} \right)^{\gamma}$$
