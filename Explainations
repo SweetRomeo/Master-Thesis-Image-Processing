@@ -1,1 +1,8 @@
+Konu: Otonom Araçlarda Gerçek Zamanlı Düşük Işık İyileştirme
+
+Problemin Tanımı: Otonom araçlarda görüntü iyileştirmeyi yapmış olmak yetmez bunun yanında millisaniyeler 
+içinde(Real-Time) olması gerekiyor. Bu yüzden tezin ana katkısı, Python'un esnekliği ile C++'ın hızını
+birleştiren hibrit bir mimari kurmak olacak.
+
+
 
