@@ -8,4 +8,9 @@
 This project implements and compares various image enhancement algorithms designed to improve the perception capabilities of **autonomous vehicles** in low-light and non-uniform lighting conditions.
 
 # Image Processing Algorithms and their implementations
-- Gamma Correction: 
+### 1. Gamma Correction (Power-Law Transformation)
+A non-linear operation used to encode and decode luminance or tristimulus values in video or still image systems. It is computationally efficient for real-time applications.
+
+The transformation is defined as:
+
+$$V_{out} = V_{in}^{\gamma}$$
