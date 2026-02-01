@@ -9,3 +9,5 @@ Kullanılacak algoritmalar ve kullanılacağı koşullar:
 2-) Histogram Equation     İstatistik/Sayma    Orta                  Orta                     Çok Hızlı                     Orta ışık
 3-) SSR(Retinex)           Konvolüsyon         Yüksek                Yavaş(Darboğaz)          Hızlı                         Düşük ışık
 4-) MSR(Retinex)           3x Konvolüsyon	   Çok Yüksek	         Çok Yavaş (Kritik)	      Akıcı	                        Karanlık
+
+Gamma Correction
