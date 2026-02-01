@@ -1,8 +1,26 @@
+1. Giriş: Problemi ve Çözümü Tanımla
+
 Konu: Otonom Araçlarda Gerçek Zamanlı Düşük Işık İyileştirme
 
 Problemin Tanımı: Otonom araçlarda görüntü iyileştirmeyi yapmış olmak yetmez bunun yanında millisaniyeler 
 içinde(Real-Time) olması gerekiyor. Bu yüzden tezin ana katkısı, Python'un esnekliği ile C++'ın hızını
 birleştiren hibrit bir mimari kurmak olacak.
+
+2. Yöntem: Algoritmaları Neden Seçtiğini Açıkla (En Önemli Kısım)
+
+Karşılaştırma için literatürden, farklı matematiksel temellere dayanan 4 temel algoritma seçtim:
+
+1. Gamma Correction (Referans): "En basit ve hızlı yöntem olduğu için bunu 'baseline' (taban referans) 
+olarak kullanacağım."
+
+2. CLAHE (İstatistiksel): "Histogram eşitlemenin (HE) gürültü üreten yapısını engellediği için CLAHE'yi seçtim. 
+Lokal kontrast için standarttır."
+
+3. MSR - Multi Scale Retinex (Renk Teorisi): "Burada iddialıyım hocam. MSR normalde çok ağırdır ama renkleri en doğal koruyan yöntemdir. 
+C++ optimizasyonu ile bunu hızlandıracağım."
+
+4. Fast-LIME (Fizik Tabanlı): "Bunu özellikle tünel çıkışları veya sokak lambaları gibi dengesiz aydınlatma koşulları için ekledim. 
+Bir 'aydınlatma haritası' çıkardığı için parlak yerleri patlatmadan karanlığı açabiliyor."
 
 
 
