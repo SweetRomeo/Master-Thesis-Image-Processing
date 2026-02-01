@@ -1,2 +1,11 @@
-# Master-Thesis-Image-Processing
-My master thesis topic is about hybrid(Not only C++ but also Python) artitecture for image processing
+# Real-Time Low-Light Image Enhancement for Autonomous Driving 🚗🌙
+
+![Language](https://img.shields.io/badge/language-C%2B%2B%20%7C%20Python-blue)
+![Platform](https://img.shields.io/badge/platform-Linux%20%7C%20Embedded-lightgrey)
+![License](https://img.shields.io/badge/license-MIT-green)
+
+## 📖 Abstract
+This project implements and compares various image enhancement algorithms designed to improve the perception capabilities of **autonomous vehicles** in low-light and non-uniform lighting conditions.
+
+# Image Processing Algorithms and their implementations
+- Gamma Correction: 
