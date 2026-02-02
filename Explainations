@@ -38,3 +38,9 @@ Görüntü Kalitesi: PSNR ve SSIM ile sinyal bozulmasını ölçeceğim.
 Performans (Kritik Olan): Algoritmaların FPS (Kare/Saniye) ve Latency (Gecikme) değerlerini ölçeceğim.
 
 Vurucu Cümle: "Amacım, Python'da 15 FPS çalışan bir algoritmayı, C++ hibrit mimari ile otonom sürüş güvenliği sınırı olan 30+ FPS'e çıkarıp çıkaramayacağımı kanıtlamak."
+
+4. Sonraki Adım ve Onay Alma
+Konuşmayı profesyonelce bitir ve topu hocaya at.
+
+Şunu Söyle: "Şu an Gamma Correction ve CLAHE algoritmalarının C++ ve Python implementasyonlarını hazırladım. İlk testlerimi LOL (Low-Light) veri seti üzerinde yapmayı planlıyorum. 
+Bu yol haritası sizin için de uygun mudur?"
