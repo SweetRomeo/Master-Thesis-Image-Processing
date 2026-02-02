@@ -31,6 +31,10 @@ Görsel Kalite: PSNR ve SSIM metrikleriyle görüntünün bozulmadan ne kadar iy
 Performans (Kritik): Algoritmaların Python ve C++ implementasyonları arasındaki milisaniye (ms) ve FPS farkını ortaya koyacağım. 
 Şu anki ön testlerimde MSR algoritmasında C++ ile 20 kata varan hızlanma gördüm."
 
+"Sadece 'görüntü güzelleşti mi?' diye bakmayacağım hocam. İki temel metriğim var:"
 
+Görüntü Kalitesi: PSNR ve SSIM ile sinyal bozulmasını ölçeceğim.
 
+Performans (Kritik Olan): Algoritmaların FPS (Kare/Saniye) ve Latency (Gecikme) değerlerini ölçeceğim.
 
+Vurucu Cümle: "Amacım, Python'da 15 FPS çalışan bir algoritmayı, C++ hibrit mimari ile otonom sürüş güvenliği sınırı olan 30+ FPS'e çıkarıp çıkaramayacağımı kanıtlamak."
