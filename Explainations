@@ -6,6 +6,7 @@ Problemin Tanımı: Otonom araçlarda görüntü iyileştirmeyi yapmış olmak y
 içinde(Real-Time) olması gerekiyor. Bu yüzden tezin ana katkısı, Python'un esnekliği ile C++'ın hızını
 birleştiren hibrit bir mimari kurmak olacak.
 
+------------------------------------------------------------------------
 2. Yöntem: Algoritmaları Neden Seçtiğini Açıkla (En Önemli Kısım)
 
 Karşılaştırma için literatürden, farklı matematiksel temellere dayanan 4 temel algoritma seçtim:
@@ -22,6 +23,7 @@ C++ optimizasyonu ile bunu hızlandıracağım."
 d-) Fast-LIME (Fizik Tabanlı): "Bunu özellikle tünel çıkışları veya sokak lambaları gibi dengesiz aydınlatma koşulları için ekledim. 
 Bir 'aydınlatma haritası' çıkardığı için parlak yerleri patlatmadan karanlığı açabiliyor."
 
+------------------------------------------------------------------------
 3. Beklenen Katkı ve Metodoloji
 
 Nasıl ölçeceğim?
@@ -39,7 +41,9 @@ Performans (Kritik Olan): Algoritmaların FPS (Kare/Saniye) ve Latency (Gecikme)
 
 Vurucu Cümle: "Amacım, Python'da 15 FPS çalışan bir algoritmayı, C++ hibrit mimari ile otonom sürüş güvenliği sınırı olan 30+ FPS'e çıkarıp çıkaramayacağımı kanıtlamak."
 
+------------------------------------------------------------------------
 4. Sonraki Adım ve Onay Alma
+
 Konuşmayı profesyonelce bitir ve topu hocaya at.
 
 Şunu Söyle: "Şu an Gamma Correction ve CLAHE algoritmalarının C++ ve Python implementasyonlarını hazırladım. İlk testlerimi LOL (Low-Light) veri seti üzerinde yapmayı planlıyorum. 
