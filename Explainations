@@ -24,6 +24,13 @@ Bir 'aydınlatma haritası' çıkardığı için parlak yerleri patlatmadan kara
 
 3. Beklenen Katkı ve Metodoloji
 
+Nasıl ölçeceğim?
+
+Görsel Kalite: PSNR ve SSIM metrikleriyle görüntünün bozulmadan ne kadar iyileştiğini ölçeceğim.
+
+Performans (Kritik): Algoritmaların Python ve C++ implementasyonları arasındaki milisaniye (ms) ve FPS farkını ortaya koyacağım. 
+Şu anki ön testlerimde MSR algoritmasında C++ ile 20 kata varan hızlanma gördüm."
+
 
 
 
