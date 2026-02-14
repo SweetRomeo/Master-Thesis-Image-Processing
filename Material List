@@ -11,5 +11,14 @@
   - ND Filtre Seti (Neutral Density): Gündüz vakti "karanlık ortam" simülasyonu yapmak için kamera lensine takılır.
   - Renk Kalibrasyon Kartı (Color Checker): Görüntü iyileştirme sonrası renklerin bozulup bozulmadığını ölçmek için referans kart. 
   - Ayarlanabilir LED Işık Paneli: Laboratuvar ortamında 40 lux, 90 lux gibi değerleri sabitlemek için.
-5-)
+5-) Güç ve Mekanik
+  - Li-Po Batarya (4S 14.8V 5000mAh): Tüm sistemi mobil olarak beslemek için yüksek kapasiteli batarya.
+  - Li-Po Balance Charger (Şarj Aleti): Bataryayı güvenli şarj etmek için.
+  - DC-DC Buck Converter (Voltaj Düşürücü) x 3: Bataryadan gelen 14.8V'u Jetson (19V/5V) ve RPi (5V) için uygun voltaja düşürmek için.
+  - Robot Şasesi / Platform: Tüm parçaların üzerine monte edileceği tekerlekli şase (RC araç şasesi de olur).
+  - Kamera Tripodu (Masaüstü): Sabit testlerde kameranın titrememesi için.
+6-) Sarf Malzemeler
+  - Bağlantı Kabloları Seti
+  - Montaj Ekipmanları
+  
 Toplam Tahmini Harcama: ~82.000 TL (Hala 150 bin TL limitinin yarısındasın, bu çok güvenli ve kabul edilebilir bir miktar).
