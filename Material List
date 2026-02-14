@@ -1,14 +1,15 @@
-- Global Shutter Camera x 2 adet
-- Raspberry pi 5 x 2 adet
-- NVIDIA Jetson Orin Nano Super Developer Kit 945-13766-0005-000
-- Lüksmetre
-- Değişken Diyaframlı Lensler
-- Lidar Sensörü(Örn: RPLidar A1 veya A2)
-- Yüksek Hızlı MicroSD Kartlar
-- Powerbank / Li-Po Batarya Seti
-- ND Filtre Seti (Algoritmaları gündüz test etmek için)
-- Color Checker / Renk Kartelası (Bilimsel doğruluk için)
-- DC-DC Buck Converter (Li-Po'yu Jetson'a bağlamak için)
-- M.2 NVMe SSD (Jetson performansı için MicroSD'den çok daha iyi)
-- Ayarlanabilir LED Işık (Kontrollü deney ortamı için)
+1-) Anakart ve İşlem
+  - NVIDIA Jetson Orin Nano Super Developer Kit (8GB): Ana görüntü işleme ve yapay zeka motoru. (Soğutucu dahil olmalı).
+  - Raspberry Pi 5 (8GB RAM) x 2 adet: Sensör verilerini toplamak ve çevresel birimleri yönetmek için.
+  - Raspberry Pi 5 Aktif Soğutucu x 2 adet: Pi 5 yük altında ısındığı için zorunlu.
+2-) Depolama
+  - M.2 NVMe SSD (Min. 500GB): Jetson Orin Nano için yüksek hızlı veri yazma ve işletim sistemi diski.
+  - MicroSD Kart (64GB - Class 10/U3) x 2 adet: Raspberry Pi işletim sistemleri için yüksek hızlı kartlar.
+3-) Sensörler
+  - Global Shutter Kamera (IMX296 veya OV9281) x 2: Hareket halindeki araçta görüntü bozulmasını (rolling shutter effect) önlemek için şart.
+4-) Optik Deney Seti
+  - ND Filtre Seti (Neutral Density): Gündüz vakti "karanlık ortam" simülasyonu yapmak için kamera lensine takılır.
+  - Renk Kalibrasyon Kartı (Color Checker): Görüntü iyileştirme sonrası renklerin bozulup bozulmadığını ölçmek için referans kart. 
+  - Ayarlanabilir LED Işık Paneli: Laboratuvar ortamında 40 lux, 90 lux gibi değerleri sabitlemek için.
+5-)
 Toplam Tahmini Harcama: ~82.000 TL (Hala 150 bin TL limitinin yarısındasın, bu çok güvenli ve kabul edilebilir bir miktar).
