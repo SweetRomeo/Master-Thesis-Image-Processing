@@ -6,4 +6,9 @@
 - Lidar Sensörü(Örn: RPLidar A1 veya A2)
 - Yüksek Hızlı MicroSD Kartlar
 - Powerbank / Li-Po Batarya Seti
+- ND Filtre Seti (Algoritmaları gündüz test etmek için)
+- Color Checker / Renk Kartelası (Bilimsel doğruluk için)
+- DC-DC Buck Converter (Li-Po'yu Jetson'a bağlamak için)
+- M.2 NVMe SSD (Jetson performansı için MicroSD'den çok daha iyi)
+- Ayarlanabilir LED Işık (Kontrollü deney ortamı için)
 Toplam Tahmini Harcama: ~82.000 TL (Hala 150 bin TL limitinin yarısındasın, bu çok güvenli ve kabul edilebilir bir miktar).
