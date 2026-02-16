@@ -1,6 +1,6 @@
 1-) Anakart ve İşlem
   - NVIDIA Jetson Orin Nano Super Developer Kit (8GB): Ana görüntü işleme ve yapay zeka motoru. (Soğutucu dahil olmalı).
-    - Link: [https://www.360teknoloji.com/nvidia-jetson-orin-nano-developer-kit-8-gb?gad_source=1&gad_campaignid=22341286956&gbraid=0AAAAA-8jWwK-Qet6vwlHimmc4xCvCE8h8&gclid=CjwKCAiAncvMBhBEEiwA9GU_foGzeRBKirBkDW47PiNpGekQuiOKh3ldaH-1_nUrqeFN5doJwix4PxoCRtcQAvD_BwE]
+    - Link: https://www.360teknoloji.com/nvidia-jetson-orin-nano-developer-kit-8-gb?gad_source=1&gad_campaignid=22341286956&gbraid=0AAAAA-8jWwK-Qet6vwlHimmc4xCvCE8h8&gclid=CjwKCAiAncvMBhBEEiwA9GU_foGzeRBKirBkDW47PiNpGekQuiOKh3ldaH-1_nUrqeFN5doJwix4PxoCRtcQAvD_BwE
 
   - Raspberry Pi 5 (8GB RAM) x 2 adet: Sensör verilerini toplamak ve çevresel birimleri yönetmek için.
   - Raspberry Pi 5 Aktif Soğutucu x 2 adet: Pi 5 yük altında ısındığı için zorunlu.
