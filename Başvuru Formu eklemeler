@@ -1,0 +1,22 @@
+7-) Yöntem
+Bu yüksek lisans tez çalışmasında, belirlenen hedeflere ulaşmak amacıyla nicel (kantitatif) araştırma ve deneysel test yöntemleri benimsenecektir. Çalışmanın metodolojisi üç temel aşamadan oluşmaktadır:
+
+1. Deney Ortamının ve Veri Setinin Hazırlanması
+Görüntü iyileştirme algoritmalarının testleri, otonom araçların uç bilişim (edge computing) donanım kısıtlarını gerçeğe en yakın şekilde simüle edebilmek adına 
+NVIDIA Jetson Orin Nano geliştirici kartı üzerinde gerçekleştirilecektir. Testlerde kullanılacak veriler; çeşitli aydınlatma şiddetlerinde (lüks değerlerinde) global shutter kameralar ile elde edilen özgün sahnelerden ve literatürde kabul görmüş standart düşük ışık (low-light) veri setlerinden oluşturulacaktır.
+
+2. Mimari Tasarım ve Algoritmaların Uygulanması
+Görüntü iyileştirme işlemleri (örneğin; atmosferik saçılma modeli tabanlı yöntemler ve piksel uyarlamalı gama düzeltmeleri) iki farklı yazılım mimarisinde kodlanarak
+karşılaştırılacaktır:
+
+Saf Python Mimarisi: Referans (baseline) gecikme değerlerini oluşturmak amacıyla, işlemlerin tamamı standart Python kütüphaneleri kullanılarak yürütülecektir.
+
+Hibrit (C++ ve Python) Mimari: Görüntü matrisleri üzerindeki piksel bazlı ağır matematiksel işlemler ve döngüler yüksek performanslı C++ dilinde derlenecek; 
+sistemin genel kontrolü ve prototipleme esnekliği ise Python üzerinden yönetilecektir. İki dil arasındaki veri iletimi (binding) optimize edilerek bellek 
+sızıntıları ve kopyalama maliyetleri minimuma indirilecektir.
+
+3. Performans ve Gecikme (Latency) Analizi
+Deney düzeneğindeki en kritik parametre olan görüntü iyileştirme gecikme süresi (latency), bağımsız bir ölçüm kurgusuyla test edilecektir. 
+Gecikme hesaplanırken, kameradan veya diskten veriyi okuma (I/O) süreleri ile algoritmanın saf çalışma (runtime) süreleri birbirinden izole edilecektir. 
+Elde edilen saniyedeki kare hızı (FPS) ve milisaniye (ms) cinsinden işlem süresi verileri, ortamdaki aydınlatma şiddeti parametresine göre gruplandırılacak ve saf 
+Python mimarisi ile hibrit mimari arasındaki performans farkı istatistiksel olarak ortaya konulacaktır.
