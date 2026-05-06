@@ -21,7 +21,7 @@ Bu tablo, yüksek lisans tezi kapsamında incelenen makaleleri sistemli şekilde
 
 | No | Makale Adı | Yazarlar | Yıl | Problem Alanı | Kullanılan Yöntem / Algoritma | Veri Seti | Kullanılan Metrikler | Gerçek Zamanlılık Değerlendirmesi | Tezime Katkısı | Eksik / Sınırlı Yön |
 |---:|---|---|---:|---|---|---|---|---|---|---|
-| 1 |  |  |  | Low-light / Night Driving |  |  | PSNR, SSIM, FPS | Var / Yok / Belirtilmemiş |  |  |
+| 1 | A survey on Image Enhancement for Low-Light Images |  |  | Low-light / Night Driving |  |  | PSNR, SSIM, FPS | Var / Yok / Belirtilmemiş |  |  |
 | 2 |  |  |  | Fog / Haze |  |  |  | Var / Yok / Belirtilmemiş |  |  |
 | 3 |  |  |  | Rain / Snow |  |  |  | Var / Yok / Belirtilmemiş |  |  |
 | 4 |  |  |  | General Image Enhancement |  |  |  | Var / Yok / Belirtilmemiş |  |  |
@@ -50,5 +50,4 @@ Bu tablo, yüksek lisans tezi kapsamında incelenen makaleleri sistemli şekilde
 
 Bu çalışma hangi problemi çözmeyi amaçlıyor?
 
-```text
-Buraya makalenin ana amacını 2-3 cümleyle yaz.
+Bu zamana kadar yapılmış olan çalışmalarda ağırlıklı olarak görüntü iyileştirme algoritmaları 
