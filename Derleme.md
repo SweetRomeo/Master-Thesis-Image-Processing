@@ -21,7 +21,7 @@ Bu tablo, yüksek lisans tezi kapsamında incelenen makaleleri sistemli şekilde
 
 | No | Makale Adı | Yazarlar | Yıl | Problem Alanı | Kullanılan Yöntem / Algoritma | Veri Seti | Kullanılan Metrikler | Gerçek Zamanlılık Değerlendirmesi | Tezime Katkısı | Eksik / Sınırlı Yön |
 |---:|---|---|---:|---|---|---|---|---|---|---|
-| 1 | A survey on Image Enhancement for Low-Light Images |  |  | Low-light / Night Driving |  |  | PSNR, SSIM, FPS | Var / Yok / Belirtilmemiş |  |  |
+| 1 | A survey on image enhancement for Low-light images | Jiawei Guo, Jieming Ma, Ángel F. García-Fernández, Yungang Zhang, Haining Liang | 2023 | Low-light / Night Driving, General Image Enhancement | Gray level transformation, Histogram Equalization, CLAHE, Retinex, Machine Learning-based enhancement | Çeşitli low-light image datasets incelenmiş | MSE, NIQE, SSIM, PSNR vb. | Doğrudan gerçek zamanlı Python-C++ performans karşılaştırması yok; bazı yöntemler kalite açısından karşılaştırılmış | Düşük ışıklı görüntü iyileştirme yöntemlerini geleneksel ve makine öğrenmesi tabanlı olarak sınıflandırmak için ana kaynak olarak kullanılabilir | Otonom araçlara doğrudan odaklanmıyor; Python-C++ hibrit mimari ve FPS/latency karşılaştırması içermiyor |
 | 2 |  |  |  | Fog / Haze |  |  |  | Var / Yok / Belirtilmemiş |  |  |
 | 3 |  |  |  | Rain / Snow |  |  |  | Var / Yok / Belirtilmemiş |  |  |
 | 4 |  |  |  | General Image Enhancement |  |  |  | Var / Yok / Belirtilmemiş |  |  |
