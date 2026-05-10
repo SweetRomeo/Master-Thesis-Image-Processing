@@ -166,3 +166,15 @@ Gelişen optik sensörlerle birlikte artan 4K ve 8K (Ultra-High-Definition) yük
 Düşük ışıklı görüntü iyileştirme alanında son yıllarda geliştirilen derin öğrenme tabanlı (CNN ve GAN) algoritmaları sistemli bir şekilde sınıflandırmak, ağ mimarilerini, kullanılan veri setlerini (NPE, MEF, SID, LOL vb.) ve kalite değerlendirme metriklerini analiz etmektir. Literatürdeki yöntemlerin avantajlarını ve dezavantajlarını ortaya koyarak gelecekteki araştırma yönlerine ışık tutmayı hedefler.
 
 **Teze Katkısı:** Bu derleme çalışması, derin öğrenme modellerinin başarısına rağmen işlem hızı ve verimliliğinin (speed and efficiency) artırılmasının pratik uygulamalar (özellikle gerçek zamanlı sistemler) için hala aşılması gereken en önemli sorunlardan biri olduğunu vurgular. [cite_start]Otonom araç kameralarından alınan görüntülerin işlenmesinde salt Python kullanmak yerine performans darboğazlarını aşmak için neden C++ veya hibrit sistemlere ihtiyaç duyduğunuzu literatüre (güncel 2023 tarihli bir makaleye) dayandırarak savunmanız için mükemmel bir teorik temel sağlar.
+
+## Paper 10
+
+### Makale Bilgisi
+- **Makale Adı:** LightingNet: An Integrated Learning Method for Low-Light Image Enhancement
+- **Yazarlar:** Shaoliang Yang, Dongming Zhou, Jinde Cao, Yanbu Guo
+- **Yıl:** 2023
+- **Yayın Yeri:** IEEE Transactions on Computational Imaging
+- **DOI / Link:** 10.1109/TCI.2023.3240087
+
+### Çalışmanın Amacı
+Düşük ışıklı ortamlarda çekilen görüntülerde oluşan gürültü, renk sapması ve detay bozulması problemlerini çözmek amacıyla "LightingNet" adında bütünleşik bir öğrenme (integrated learning) yaklaşımı önermektir. Bu model, yerel üst düzey özellikleri öğrenmek için tam ölçekli bir Vision Transformer (ViT) alt ağı ve küresel özellikleri ince ayarlamak için transfer öğrenme (Res2Net) tabanlı tamamlayıcı bir CNN alt ağı kullanır.
