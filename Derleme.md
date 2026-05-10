@@ -4,7 +4,7 @@ Bu tablo, yüksek lisans tezi kapsamında incelenen makaleleri sistemli şekilde
 
 ## Tez Konusu
 
-**Otonom araç görüntülerinde görüntü iyileştirme algoritmalarının pure Python ve hibrit Python-C++ mimarileri üzerinden performans karşılaştırması**
+**Otonom Araçlarda Düşük Işıkta gerçek zamanlı Görüntü İyileştirme Uygulaması**
 
 ## Literatür Tarama Amaçları
 
