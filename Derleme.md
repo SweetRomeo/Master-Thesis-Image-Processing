@@ -93,3 +93,21 @@ Düşük ışıklı görüntü iyileştirme algoritmalarının çıktılarının
 ### Çalışmanın Amacı
 
 Düşük ışıklı görüntü iyileştirme algoritmalarının performansını yalnızca "düşük seviyeli" görsel kalite (insan algısı) açısından değil, aynı zamanda yüz tespiti gibi "yüksek seviyeli" bilgisayarlı görü görevleri üzerindeki etkileri açısından da değerlendirmeyi amaçlamaktadır. Bu kapsamda, hem görüntü kalitesi hem de makine görmesi görevlerini destekleyen VE-LOL (Vision Enhancement in the LOw-Light condition) adlı büyük ölçekli bir veri seti önerilmiş ve iyileştirme modülü ile tespit modülünün ortaklaşa (joint) çalıştığı bir mimari sunulmuştur. Geliştirilecek sistemlerin nesne tespit başarılarına etkisini ölçmek için metodolojik bir temel oluşturur.
+
+## Paper 5
+
+### Makale Bilgisi
+
+- [cite_start]**Makale Adı:** Gap-Closing Matters: Perceptual Quality Evaluation and Optimization of Low-Light Image Enhancement [cite: 5]
+- [cite_start]**Yazarlar:** Baoliang Chen, Lingyu Zhu, Hanwei Zhu, Wenhan Yang, Linqi Song, Shiqi Wang [cite: 5]
+- [cite_start]**Yıl:** 2024 [cite: 5]
+- [cite_start]**Yayın Yeri:** IEEE Transactions on Multimedia [cite: 5]
+- **DOI / Link:** (DOI eklenecek)
+
+### Çalışmanın Amacı
+
+Bu çalışma hangi problemi çözmeyi amaçlıyor?
+
+Düşük ışıklı görüntü iyileştirme algoritmalarının tasarımı ile son kullanıcıların algıladığı görsel kalite arasındaki "boşluğu (gap)" kapatmayı amaçlamaktadır. Literatürde kalite değerlendirmesine yeterince odaklanılmadığını savunan yazarlar, SQUARE-LOL (Subjective Quality Assessment of REconstructed LOw-Light Images) adında geniş çaplı yeni bir veri seti oluşturmuşlardır[cite: 5]. [cite_start]Sadece kaliteyi ölçmekle kalmayıp, geliştirdikleri objektif kalite ölçütünü iyileştirme algoritmalarının optimizasyon sürecine (loss function vb. olarak) dahil ederek daha yüksek algısal kaliteye sahip çıktılar üretmeyi başarmışlardır.
+
+**Teze Katkısı:** Hibrit (C++/Python) mimarilerle geliştirilecek görüntü iyileştirme modellerinin başarısını kanıtlarken, yalnızca işlem süresi (FPS) olarak değil, "çıktı kalitesi" olarak da literatürün kabul ettiği en güncel (2024) algısal kalite değerlendirme yaklaşımlarına atıf yapmanızı sağlayacaktır.
