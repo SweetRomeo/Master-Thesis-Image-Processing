@@ -153,14 +153,16 @@ Gelişen optik sensörlerle birlikte artan 4K ve 8K (Ultra-High-Definition) yük
 
 **Teze Katkısı:** Otonom araçlarda 4K/8K gibi yüksek çözünürlüklü sensörlerin standart hale gelmeye başladığı günümüzde, saf Python veya C++ ile yazılacak hibrit mimarilerin yüksek çözünürlükte nasıl darboğazlar (bottleneck) yaşayacağını tartışmak ve hesaplama yükü hafifletilmiş (lightweight) Transformer alternatiflerini incelemek için çok güçlü bir kaynaktır.
 
+## Paper 9
+
 ### Makale Bilgisi
-- **Makale Adı:** Low-Light Image and Video Enhancement Using Deep Learning: A Survey
-- **Yazarlar:** Chongyi Li, Chunle Guo, Linghao Han, Jun Jiang, Ming-Ming Cheng, Jinwei Gu, Chen Change Loy
-- **Yıl:** 2022
-- **Yayın Yeri:** IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)
-- **DOI / Link:** (Eklenecek)
+- **Makale Adı:** A Survey of Deep Learning-Based Low-Light Image Enhancement
+- **Yazarlar:** Zhen Tian, Peixin Qu, Jielin Li, Yukun Sun, Guohou Li, Zheng Liang, Weidong Zhang
+- **Yıl:** 2023 
+- **Yayın Yeri:** Sensors (MDPI) 
+- **DOI / Link:** 10.3390/s23187763 
 
 ### Çalışmanın Amacı
-Düşük ışıklı görüntü ve video iyileştirme alanında derin öğrenme tabanlı yöntemlerin (ağ mimarileri, kayıp fonksiyonları, eğitim stratejileri) çok kapsamlı bir incelemesini (survey) sunmak. Çalışma, literatürü derlemekle kalmayıp yeni bir veri seti ve çevrimiçi bir platform sunarak algoritmaların genellenebilirliğini test etmektedir. Ayrıca algoritmaların karanlıkta yüz tespiti (face detection in the dark) gibi yüksek seviye makine görmesi görevlerindeki pratik başarılarını da doğrulamaktadır.
+Düşük ışıklı görüntü iyileştirme alanında son yıllarda geliştirilen derin öğrenme tabanlı (CNN ve GAN) algoritmaları sistemli bir şekilde sınıflandırmak, ağ mimarilerini, kullanılan veri setlerini (NPE, MEF, SID, LOL vb.) ve kalite değerlendirme metriklerini analiz etmektir. Literatürdeki yöntemlerin avantajlarını ve dezavantajlarını ortaya koyarak gelecekteki araştırma yönlerine ışık tutmayı hedefler.
 
-**Teze Katkısı:** Derin öğrenme tabanlı iyileştirme yöntemlerinin makine görmesi performansına etkisini kanıtlayan en üst düzey (TPAMI) referanslardan biridir. Geliştirilecek otonom sürüş iyileştirme algoritmalarının nesne/şerit tespitine nasıl pozitif etki edeceği savunulurken doğrudan atıf yapılabilecek teorik arka planı sağlar.
+**Teze Katkısı:** Bu derleme çalışması, derin öğrenme modellerinin başarısına rağmen işlem hızı ve verimliliğinin (speed and efficiency) artırılmasının pratik uygulamalar (özellikle gerçek zamanlı sistemler) için hala aşılması gereken en önemli sorunlardan biri olduğunu vurgular. [cite_start]Otonom araç kameralarından alınan görüntülerin işlenmesinde salt Python kullanmak yerine performans darboğazlarını aşmak için neden C++ veya hibrit sistemlere ihtiyaç duyduğunuzu literatüre (güncel 2023 tarihli bir makaleye) dayandırarak savunmanız için mükemmel bir teorik temel sağlar.
