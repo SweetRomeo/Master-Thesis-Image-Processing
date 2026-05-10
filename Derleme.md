@@ -138,3 +138,29 @@ Düşük ışıkta yakalanan görüntülerdeki azalan görünürlük, yoğun gü
 Düşük ışıklı görüntü ve video iyileştirme alanında derin öğrenme tabanlı yöntemlerin (ağ mimarileri, kayıp fonksiyonları, eğitim stratejileri) çok kapsamlı bir incelemesini (survey) sunmak. Çalışma, literatürü derlemekle kalmayıp yeni bir veri seti ve çevrimiçi bir platform sunarak algoritmaların genellenebilirliğini test etmektedir. Ayrıca algoritmaların karanlıkta yüz tespiti (face detection in the dark) gibi yüksek seviye makine görmesi görevlerindeki pratik başarılarını da doğrulamaktadır.
 
 **Teze Katkısı:** Derin öğrenme tabanlı iyileştirme yöntemlerinin makine görmesi performansına etkisini kanıtlayan en üst düzey (TPAMI) referanslardan biridir. Geliştirilecek otonom sürüş iyileştirme algoritmalarının nesne/şerit tespitine nasıl pozitif etki edeceği savunulurken doğrudan atıf yapılabilecek teorik arka planı sağlar.
+
+## Paper 8
+
+### Makale Bilgisi
+- **Makale Adı:** Ultra-High-Definition Low-Light Image Enhancement: A Benchmark and Transformer-Based Method
+- **Yazarlar:** Tao Wang, Kaihao Zhang, Tianrun Shen, Wenhan Luo, Bjorn Stenger, Tong Lu
+- **Yıl:** 2023
+- **Yayın Yeri:** AAAI Conference on Artificial Intelligence (AAAI-23)
+- **DOI / Link:** (Eklenecek)
+
+### Çalışmanın Amacı
+Gelişen optik sensörlerle birlikte artan 4K ve 8K (Ultra-High-Definition) yüksek çözünürlüklü görüntülerin düşük ışık altında iyileştirilmesi problemini çözmeyi amaçlamaktadır. Yüksek çözünürlüklü görüntülerin standart algoritmalarla işlenmesi devasa bir hesaplama yükü getirdiğinden, yazar ekibi lineer karmaşıklığı önemli ölçüde azaltan "LLFormer" adında Transformer tabanlı yeni bir yöntem önermiştir. Ayrıca bu alandaki boşluğu doldurmak için 4K ve 8K görüntülerden oluşan UHD-LL adlı devasa bir veri seti literatüre kazandırılmıştır.
+
+**Teze Katkısı:** Otonom araçlarda 4K/8K gibi yüksek çözünürlüklü sensörlerin standart hale gelmeye başladığı günümüzde, saf Python veya C++ ile yazılacak hibrit mimarilerin yüksek çözünürlükte nasıl darboğazlar (bottleneck) yaşayacağını tartışmak ve hesaplama yükü hafifletilmiş (lightweight) Transformer alternatiflerini incelemek için çok güçlü bir kaynaktır.
+
+### Makale Bilgisi
+- **Makale Adı:** Low-Light Image and Video Enhancement Using Deep Learning: A Survey
+- **Yazarlar:** Chongyi Li, Chunle Guo, Linghao Han, Jun Jiang, Ming-Ming Cheng, Jinwei Gu, Chen Change Loy
+- **Yıl:** 2022
+- **Yayın Yeri:** IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)
+- **DOI / Link:** (Eklenecek)
+
+### Çalışmanın Amacı
+Düşük ışıklı görüntü ve video iyileştirme alanında derin öğrenme tabanlı yöntemlerin (ağ mimarileri, kayıp fonksiyonları, eğitim stratejileri) çok kapsamlı bir incelemesini (survey) sunmak. Çalışma, literatürü derlemekle kalmayıp yeni bir veri seti ve çevrimiçi bir platform sunarak algoritmaların genellenebilirliğini test etmektedir. Ayrıca algoritmaların karanlıkta yüz tespiti (face detection in the dark) gibi yüksek seviye makine görmesi görevlerindeki pratik başarılarını da doğrulamaktadır.
+
+**Teze Katkısı:** Derin öğrenme tabanlı iyileştirme yöntemlerinin makine görmesi performansına etkisini kanıtlayan en üst düzey (TPAMI) referanslardan biridir. Geliştirilecek otonom sürüş iyileştirme algoritmalarının nesne/şerit tespitine nasıl pozitif etki edeceği savunulurken doğrudan atıf yapılabilecek teorik arka planı sağlar.
