@@ -33,6 +33,7 @@ Bu tablo, yüksek lisans tezi kapsamında incelenen makaleleri sistemli şekilde
 | 10 | LightingNet: An Integrated Learning Method for Low-Light Image Enhancement | Shaoliang Yang, Dongming Zhou, Jinde Cao, Yanbu Guo | 2023 | Düşük Işıklı Görüntü İyileştirme (Gürültü, Renk Sapması, Detay Kaybı)  | Bütünleşik Öğrenme: Vision Transformer (ViT) tabanlı iyileştirme alt ağı ve Res2Net tabanlı tamamlayıcı CNN alt ağı | Referanslı: LOL, SICE. Referanssız: ExDARK, DICM, LIME, MEF, NPE. | PSNR, SSIM, MS-SSIM, UQI, VIF, SCC, SAM, BRISQUE, NIQE, Inference Time, YOLOv4 nesne tespiti | 1024x1024 çözünürlükte farklı algoritmalar için çıkarım süresi (saniye) analizi yapılmıştır (Örn: LightingNet 0.19s, Zero-DCE 0.04s). | Otonom araçlar için görüntü iyileştirmenin YOLOv4 nesne tespitine etkisini ve yüksek çözünürlükte gerçek zamanlı işleme potansiyelini kanıtlayarak tezdeki hibrit performans kıyaslamasına doğrudan ölçülebilir (FPS/saniye) bir veri sağlar. | Transformer mimarilerinin hesaplama yükü optimize edilmeye çalışılsa da, saf C++ vs Python dilleri arasındaki bellek ve donanım kullanım farklarına (CPU/RAM) değinilmemiş.
 | 11 | Low-light image enhancement by deep learning network for improved illumination map | Manli Wang, Jiayue Li, Changsen Zhang  | 2023 | Düşük Işıklı Görüntü İyileştirme (Aydınlatma Haritası ve Gürültü Kontrolü)  | Retinex Teorisi + CNN: Üç alt modül (ayrıştırma, aydınlatma, yansıma). Aydınlatma modülünde **Derinlemesine Ayrılabilir Evrişim (DSC)** kullanımı. | LOL dataset  | PSNR, SSIM, LOE, NIQE  | Modeli basit ve etkili tutarak gürültüyü artırmadan iyileştirme yapmayı amaçlar; doğrudan FPS/ms karşılaştırması sunmaz. | Kullanılan **DSC (Depth-Separable Convolution)** tekniği, derin öğrenme modellerini hafifletmek için kritiktir. Hibrit (C++/Python) mimari tasarımında hesaplama yükünü azaltacak yöntemler için teknik referans sağlar. | Otonom sürüşe özgü nesne tespiti testleri veya gömülü donanım (Jetson vb.) üzerinde Python-C++ çalışma süresi (latency) kıyaslaması içermez. |
 | 12 | R2RNet: Low-light image enhancement via Real-low to Real-normal Network | Jiang Hai, Zhu Xuan, Ren Yang, Yutong Hao, Fengzhu Zou, Fang Lin, Songchen Han | 2023 | Gerçek Dünya Düşük Işıklı Görüntü İyileştirme | Retinex tabanlı R2RNet: Decom-Net (ayrıştırma), Denoise-Net (gürültü giderme) ve Relight-Net (aydınlatma) | Gerçek dünya düşük/normal ışık görüntü çiftleri (Real-world pairs) | PSNR, SSIM vb. (Standart metrikler) | Mekansal ve frekans bilgisini birlikte kullanarak detayları koruyan dayanıklı (robust) yapı | Sentezlenmiş veriler yerine gerçek dünya verileriyle eğitilmesi ve frekans bilgisini kullanması, otonom araçlardaki detay koruma ihtiyacı için kritiktir. | Doğrudan otonom sürüş görevlerindeki (obje tespiti) etkisi veya Python-C++ dil temelli gecikme kıyaslaması sunmamaktadır. |
+
 ---
 
 # Detailed Literature Notes
@@ -194,5 +195,19 @@ Düşük ışıklı ortamlarda çekilen görüntülerde oluşan gürültü, renk
 Yetersiz aydınlatma koşullarında çekilen görüntülerin kalitesini artırırken, karanlık bölgelerin parlaklaştırılmasının gürültü kirliliğini (noise pollution) artırması sorununu çözmeyi amaçlar. Retinex teorisini temel alan model; ayrıştırma (decomposition), aydınlatma (illumination) ve yansıma (reflection) olmak üzere üç modülden oluşur. Aydınlatma modülünde kullanılan derinlemesine ayrılabilir evrişimler (DSC) sayesinde modelin hesaplama karmaşıklığı azaltılırken özellik çıkarımı iyileştirilir.
 
 **Teze Katkısı:** Hibrit (C++/Python) mimarilerle geliştireceğin otonom araç görüntü iyileştirme sisteminde, derin öğrenme modellerinin işlem gücünü nasıl optimize edebileceğin konusunda teknik bir temel sağlar. Özellikle **DSC (Depth-Separable Convolution)** kullanımı, gömülü donanımlarda modelin hızlanması için başvurulan en önemli yöntemlerden biridir. Bu makale, seçeceğin veya optimize edeceğin algoritmaların donanım üzerindeki verimliliğini savunurken güçlü bir teknik referans olacaktır.
+
+## Paper 12
+
+### Makale Bilgisi
+- **Makale Adı:** R2RNet: Low-light image enhancement via Real-low to Real-normal Network
+- **Yazarlar:** Jiang Hai, Zhu Xuan, Ren Yang, Yutong Hao, Fengzhu Zou, Fang Lin, Songchen Han
+- **Yıl:** 2023
+- **Yayın Yeri:** Journal of Visual Communication and Image Representation (Elsevier)
+- **DOI / Link:** 10.1016/j.jvcir.2022.103712
+
+### Çalışmanın Amacı
+Sentetik (yapay olarak karartılmış) görüntüler yerine gerçek dünya düşük/normal ışık görüntü çiftlerini kullanarak daha gerçekçi ve dayanıklı (robust) bir iyileştirme modeli (R2RNet) geliştirmeyi amaçlamaktadır. Model; ayrıştırma, gürültü giderme ve yeniden aydınlatma modülleri üzerinden hem mekansal bilgiyi (kontrast için) hem de frekans bilgisini (detayları korumak için) kullanır.
+
+**Teze Katkısı:** Otonom sürüş senaryolarında yol işaretleri veya uzak nesneler gibi kritik detayların korunması hayati önem taşır. R2RNet'in **frekans bilgisini** işleme dahil ederek detayları koruma stratejisi ve gerçek dünya verilerine dayanması, geliştireceğiniz hibrit C++/Python sistemlerinde model doğruluğunu savunmak için teknik bir temel oluşturur.
 
 
