@@ -42,6 +42,17 @@ Bu tablo, yüksek lisans tezi kapsamında incelenen makaleleri sistemli şekilde
 | 18 | Edge Computing Driven Low-Light Image Dynamic Enhancement for Object Detection | Yirui Wu, Haifeng Guo, Chinmay Chakraborty, Mohammad R. Khosravi, Stefano Berretti, Shaohua Wan | 2023 | Uç Bilişim (Edge Computing) Destekli Düşük Işık İyileştirme ve Nesne Tespiti | Bulut (Cloud) ve Uç (Edge) işbirlikçi uçtan uca çerçeve: Bulutta iyileştirme, uç cihazda tespit | ExDARK (Exclusively Dark Dataset) vb. | Gerçek zamanlı yanıt süresi (response time) ve nesne tespit başarı metrikleri | Kısıtlı donanıma sahip uç cihazlarda (edge) derin öğrenmenin gerçek zamanlı yanıt (real-time response) hızını artırmayı hedefler. | Otonom araçlar gibi uç (edge) donanımların limitlerini aşmak için hesaplama yükünün nasıl dağıtılacağı/optimize edileceği konusunda güçlü bir sistem mimarisi perspektifi sağlar. | Modeli cihaz üzerinde (on-device) tek başına çalıştırmak yerine bulut bağlantısına bağımlıdır; otonom sürüşte kesintisiz internet varsayımı pratik bir risk taşır. |
 | 19 | Real-time fast low-light vision enhancement for driver during driving at night | Gouranga Mandal, Diptendu Bhattacharya, Parthasarathi De | 2022 | Gece Sürüşü ve Gerçek Zamanlı Görüntü İyileştirme | Modifiye edilmiş parlak kanal önceliği (bright channel prior) ve adaptif gama düzeltmesi (Geleneksel Yöntem) | Gerçek zamanlı gece sürüş video kayıtları | İşlem/hesaplama süresi ve görsel nitelik | Derin öğrenme içermeyen hafif yapısı sayesinde çok hızlı ve gerçek zamanlı çalışacak şekilde tasarlanmıştır. | Python/C++ OpenCV karşılaştırmalarınızda kullanabileceğiniz, donanımı hiç yormayan en temel (baseline) algoritmalarından birini sunar. | Derin öğrenme içermediği için aşırı karmaşık aydınlatma ve yoğun gürültülü senaryolarda sinyal doğruluğu/kalitesi CNN modellerinden düşük kalabilir. |
 | 20 | Performance Evaluation of Computer Vision Algorithms in a Programmable Logic Controller: An Industrial Case Study | Rodrigo Vieira, Dino Silva, Eliseu Ribeiro, Luís Perdigoto, Paulo Jorge Coelho | 2023 | Endüstriyel Görüntü İşleme ve PLC Performans Analizi | Python ve OpenCV kullanılarak standart algoritmalar (Canny, Blur, Threshold vb.) | Endüstriyel vaka çalışması (metal pul sayma) | İşlem süresi (Execution time/Latency) | PLC'nin görüntü işleme performansı bir PC ile kıyaslanarak gerçek zamanlılık kapasitesi değerlendirilmiştir. | Python'un Linux tabanlı bir kontrol cihazı (PLC) üzerindeki performans sınırlarını kanıtlar. Saf Python/OpenCV kullanımının kısıtlı donanımlardaki gecikme değerlerini savunmak için kritiktir. | Otonom araçlar yerine endüstriyel otomasyona odaklıdır. Aynı donanım üzerinde C++ ve Python arasında doğrudan bir karşılaştırma içermemektedir. |
+| 21 | Low Latency Deep Learning Inference Model for Distributed Intelligent IoT Edge Clusters | Soumyalatha Naveen, Manjunath R. Kounte, Mohammed Riyaz Ahmed | 2021 | Dağıtık IoT Uç (Edge) Kümelerinde Düşük Gecikmeli Derin Öğrenme | Sınırlı kaynaklara sahip uç cihazlar için optimize edilmiş derin öğrenme çıkarım modeli | Genel IoT ve uç bilişim senaryoları | Gecikme (Latency), yanıt süresi, bellek ve güç tüketimi | Uç bilişimde gerçek zamanlı uygulamalar için uçtan uca gecikmenin minimize edilmesi hedeflenmiştir. | Otonom araçları birer "Uç Cihaz (Edge Device)" olarak konumlandırarak, donanım kısıtları altında derin öğrenme modellerinin gecikme (latency) sorunlarını doğrular. | Görüntü iyileştirme algoritması önermez veya spesifik bir Python-C++ dil kıyaslaması sunmaz. |
+| 22 | Performance Evaluation of Deep Learning Compilers for Edge Inference | Gaurav Verma, Yashi Gupta, Abid M. Malik, Barbara Chapman | 2021 | Uç Cihazlarda (Edge Devices) Derin Öğrenme Çıkarım (Inference) Performans Optimizasyonu | Derin öğrenme derleyicilerinin (TensorRT, TFLite, TVM) Raspberry Pi ve Jetson donanımlarında kıyaslanması | ResNet, MobileNet, YOLO gibi standart donanım benchmark modelleri | Çıkarım süresi (Inference time/Latency), bellek kullanımı, güç tüketimi | Uç cihazlarda gerçek zamanlı çıkarım (inference) için gecikmeyi (latency) donanım seviyesinde en aza indirme yöntemlerine odaklanmıştır. | Otonom araç (uç cihaz) donanımlarında saf Python modellerinin yavaş kalabileceğini; TensorRT (C++ tabanlı alt seviye optimizasyon) gibi araçlarla hibrit yapılara geçişin hız için zorunlu olduğunu teorik olarak kanıtlar. | Düşük ışıklı görüntü iyileştirmeye özgü bir algoritma önermez; derin öğrenme modellerinin derleyici/donanım performansına (framework optimization) odaklanır. |
+| 23 | Lightweight Low-Light Image Enhancement Techniques for Edge Devices | Ebin J Alapatt, Pankaj Kumar G, Narayanan V Eswar, Aman K Shihab, S Krishna Bhatt, Sreevishnu Damodaran, A A Aswathy | 2025 | Uç Cihazlar (Edge Devices) İçin Hafif Görüntü İyileştirme | Geleneksel (Gamma, HE, Retinex) ve Derin Öğrenme yöntemlerinin donanım kısıtlarına göre incelenmesi | Çeşitli genel literatür veri setleri üzerinden derleme | Hesaplama karmaşıklığı, uç cihaz uyumluluğu | Otonom navigasyon gibi uç sistemlerde gerçek zamanlı çalışabilen hafif algoritmaların gerekliliği vurgulanmıştır. | Otonom araçların kısıtlı donanımlarında (edge) işlem süresini optimize etme motivasyonunuzu 2025 tarihli "hafif algoritma" perspektifiyle teorik olarak destekler. | Doğrudan yeni bir C++ veya Python optimizasyon kod mimarisi sunmaz; mevcut algoritmaların durumunu özetleyen bir derlemedir. |
+| 24 | Lightweight object detection in low light: Pixel-wise depth refinement and TensorRT optimization | K. Vinoth, Sasikumar P | 2024 | Düşük Işıklı Görüntülerde Hafif Nesne Tespiti ve Çıkarım (Inference) Hızı Optimizasyonu | Piksel bazlı derinlik tahmini (Pixel-wise depth refinement) ve TensorRT ile optimize edilmiş YOLOv8 | Genel düşük ışıklı nesne tespiti verileri | Çıkarım hızı (Inference speed), nesne tespit hassasiyeti (precision), hesaplama karmaşıklığı, bellek izi (memory footprint) | Kaynakları kısıtlı cihazlarda TensorRT kullanımıyla modelin bellek ve işlem yükü azaltılarak daha hızlı çıkarım (gerçek zamanlı performans) elde edilmiştir. | Python tabanlı YOLOv8 gibi ağır modellerin uç cihazlarda çalışabilmesi için TensorRT (C++ tabanlı hızlandırma) kullanımının gecikmeyi nasıl düşürdüğünü kanıtlayan, tam tezinizin "hibrit mimari ve hız" argümanına uyan 2024 tarihli mükemmel bir referanstır. | Görüntü iyileştirme algoritmasından ziyade nesne tespiti ve TensorRT optimizasyonuna odaklanır; salt Python vs yerel OpenCV C++ kıyaslaması yerine derleyici optimizasyonuna eğilir. |
+| 25 | A Review of Recent Hardware and Software Advances in GPU-Accelerated Edge-Computing Single-Board Computers (SBCs) for Computer Vision | Umair Iqbal, Tim Davies, Pascal Perez | 2024 | GPU Hızlandırmalı Uç Cihazlarda (SBC) Bilgisayarlı Görü ve Donanım/Yazılım Optimizasyonu | NVIDIA Jetson, Raspberry Pi vb. uç cihazların (SBC) donanım mimarileri ve yazılım hızlandırıcılarının sistematik incelemesi | Endüstriyel ve otonom sistem vaka çalışmaları (Derleme) | Çıkarım hızı (Inference speed), güç tüketimi, bellek kullanımı, TFLOPS | Uç cihazlarda otonom sistemler için gerçek zamanlı bilgisayarlı görü (real-time CV) kapasiteleri incelenmiştir. | Otonom araçların kalbi olan SBC cihazlarının (örn. Jetson serisi) donanım kapasitelerini ve Python'dan C++'a (TensorRT, OpenVINO) geçişin zorunluluğunu mimari açıdan kanıtlar. | Doğrudan düşük ışık iyileştirme için yeni bir algoritma önermez; genel donanım ve framework incelemesidir. |
+| 26 | Learning Optimized Low-Light Image Enhancement for Edge Vision Tasks | SMA Sharif, Azamat Myrzabekov, Nodirkhuja Khujaev, Roman Tsoy, Seongwan Kim, Jaeho Lee | 2024 | Uç Görüş Görevleri (Edge Vision) İçin Optimize Edilmiş Düşük Işık İyileştirme | Hafif (Lightweight) derin ağ ve INT8 Eğitim Sonrası Kuantizasyon (Post-training Quantization) | Çeşitli düşük ışık veri setleri ve nesne tespiti verileri | FPS (199 FPS), Çıkarım süresi, görsel kalite metrikleri | Düşük güçlü bir uç cihazda 199 FPS gibi çok yüksek bir gerçek zamanlılık hızına ulaşılmıştır. | Tezinizdeki uç cihaz entegrasyonu hedeflerini INT8 kuantizasyonu ile hızlandırma perspektifinden destekleyen mükemmel bir CVPR kaynağıdır. | Sadece model kuantizasyonuna (INT8) odaklanır, salt bir OpenCV/C++ donanım seviyesi dil kıyaslaması sunmaz. |
+| 27 | Generic programming in modern C++ for Image Processing | Michaël Roynard | 2022 | C++ ile Görüntü İşleme, Jenerik Programlama ve Python-C++ Entegrasyon Performansı | Modern C++ (statik/dinamik çok biçimlilik, type erasure) ve Python binding (pybind11 vb.) performans testleri | Benchmarking için skimage.data.camera vb. standart görüntüler | Çalışma zamanı (Execution time / Benchmarking - sec) | C++'ın statik ve dinamik çağrıları ile Python üzerinden çağrılmasının (binding) mikro saniye seviyesindeki gecikme farkları incelenmiştir. | Otonom araçlarda görüntü iyileştirme algoritmalarını C++ ile yazıp Python'a bağlarken (hybrid mimari) yaşanacak performans kayıplarını (overhead) anlamak için mükemmel bir yazılım mimarisi kaynağıdır. | Doğrudan bir düşük ışık iyileştirme algoritması sunmaz; tamamen C++ ve Python dillerinin görüntü işleme kütüphaneleri özelindeki donanım/yazılım seviyesi performanslarına odaklanır. |
+| 28 | Immersive Virtual Painting: Pushing Boundaries in Real-Time Computer Vision using OpenCV with C++ | Satyam Mishra, Phung Thao Vi, Vu Duy Trung | 2023 | Gerçek Zamanlı Bilgisayarlı Görü ve Gecikme Optimizasyonu (C++ vs Python) | C++ ve OpenCV ile renk tespiti; paralel işleme optimizasyonları | Canlı video akışları (Live video feeds) | İşlem süresi (kare başına 15ms), Doğruluk, Yürütme Hızı (Execution speed) | OpenCV uygulamalarında C++'ın Python'a göre **3-4 kat daha hızlı çalıştığı** kanıtlanmış ve ultra düşük gecikme elde edilmiştir. | Görüntü işleme algoritmalarında saf Python yerine neden C++ (veya hibrit) kullanılması gerektiğini "3-4 kat hız farkı" gibi somut metriklerle kanıtlar; kod mimarinizi savunmak için harika bir performans referansıdır. | Otonom sürüşe veya düşük ışık iyileştirmeye değil, renk tespiti ve sanal boyama uygulamasına odaklanmıştır. |
+| 29 | Parallel Optimization of OpenCV Functions: Enhancing Image Processing Efficiency with Multi-core CPU Execution | Ali Nasir | Güncel (Belirtilmemiş) | Görüntü Ön İşleme Hızlandırması ve CPU Paralelleştirmesi | Python `multiprocessing` modülü ile OpenCV fonksiyonlarının çok çekirdekli (multi-core) CPU üzerinde paralelleştirilmesi | Kaggle Flowers Image Dataset vb. | İşlem süresi (Processing time), İş çıkarma hacmi (Throughput) | GPU erişimi olmayan ortamlarda (edge cihazlar) gerçek zamanlılık ve toplu işlem (batch processing) performansını artırmayı hedefler. | C++ entegrasyonuna geçmeden önce "saf Python" kodunun kendi içinde (multiprocessing ile) ne kadar optimize edilebileceğini gösterir; objektif bir performans referansı (baseline) oluşturur. | Görüntü iyileştirmeye özgü yeni bir algoritma sunmaz; salt CPU/Python optimizasyonudur ve C++ ile doğrudan kıyaslama içermez. |
+| 30 | TVM: An Automated End-to-End Optimizing Compiler for Deep Learning | Tianqi Chen, Thierry Moreau, Ziheng Jiang, Lianmin Zheng, Eddie Yan, Haichen Shen, Meghan Cowan, Leyuan Wang, Yuwei Hu, Luis Ceze, Carlos Guestrin, Arvind Krishnamurthy | 2018 | Çeşitli Donanım Platformları İçin Derin Öğrenme Modellerinin Derlenmesi ve Optimizasyonu | TVM: Grafik seviyesi (graph-level) ve operatör seviyesi optimizasyonlar sağlayan uçtan uca derleyici ve öğrenme tabanlı maliyet modeli | Çeşitli donanım (Raspberry Pi, NVIDIA/Mali GPU) ve modeller (ResNet, MobileNet vb.) | Çıkarım gecikmesi (Inference latency), donanım kullanım verimliliği | Ağır Derin Öğrenme modellerini standart kütüphanelere (TFLite vb.) göre donanım mimarisine doğrudan derleyerek gecikmeyi dramatik ölçüde düşürür ve uç cihazlarda gerçek zamanlılığı mümkün kılar. | Tezinizin "hibrit C++ mimarisi ve donanım optimizasyonu" argümanının merkezindeki en güçlü bilgisayar bilimleri (Sistem Mimarisi) referansıdır. Modellerin Python'dan donanıma geçerken neden derlenmesi (compile edilmesi) gerektiğini teknik detaylarıyla açıklar. | Spesifik olarak düşük ışık iyileştirme algoritması sunmaz; makine öğrenmesi modellerinin genel donanım derleyicisi mimarisine odaklanır. |
+
 ---
 
 # Detailed Literature Notes
@@ -328,3 +339,141 @@ Gece sürüşlerinde zayıf aydınlatma nedeniyle görünmeyen yayaların, çuku
 Bu çalışma, Phoenix Contact'ın PLCnext ekosisteminden bir **Programlanabilir Mantıksal Denetleyicinin (PLC)** endüstriyel görüntü işleme platformu olarak kullanılabilirliğini değerlendirmeyi amaçlamaktadır. Linux tabanlı bu kontrol cihazı üzerinde Python dili ve OpenCV kütüphanesi kullanılarak standart görüntü işleme uygulamaları geliştirilmiş; sistemin performansı (işlem süresi/gecikme) standart bir bilgisayar (PC) ile karşılaştırmalı olarak analiz edilmiştir.
 
 **Teze Katkısı:** Tezinizdeki temel odak noktası, otonom araçlar gibi gerçek zamanlı tepki vermesi gereken kısıtlı donanımlarda Python ve C++ performanslarını kıyaslamaktır. Bu makale, **saf Python ve OpenCV** ikilisinin Linux tabanlı endüstriyel bir donanım üzerindeki "milisaniye" seviyesindeki performans sınırlarını göstermesi açısından çok değerli bir referans sunar. Kontrol cihazı üzerindeki gecikme (latency) sürelerini bir PC ile kıyaslayarak sunması, sizin neden C++ entegrasyonuna veya hibrit mimariyle performans optimizasyonuna ihtiyaç duyduğunuzu teknik bir vaka çalışması üzerinden savunmanızı sağlar.
+
+## Paper 21
+
+### Makale Bilgisi
+- **Makale Adı:** Low Latency Deep Learning Inference Model for Distributed Intelligent IoT Edge Clusters
+- **Yazarlar:** Soumyalatha Naveen, Manjunath R. Kounte, Mohammed Riyaz Ahmed
+- **Yıl:** 2021
+- **Yayın Yeri:** IEEE Access
+- **DOI / Link:** 10.1109/ACCESS.2021.3131396
+
+### Çalışmanın Amacı
+Bu çalışma, Nesnelerin İnterneti (IoT) ağlarında kullanılan düşük maliyetli ve mobil uç cihazların (edge devices) sınırlı bellek, güç ve hesaplama kapasitelerini en verimli şekilde kullanabilmeleri için optimize edilmiş bir derin öğrenme çıkarım (inference) modeli sunmayı amaçlamaktadır. Ana odak noktası, akıllı uç bilişim sistemlerinde "gerçek zamanlı" (real-time) kararlar alabilmek için gerekli olan ve genellikle birkaç saniye veya daha az olması beklenen **uçtan uca gecikmeyi (end-to-end delay / low latency)** minimize etmektir.
+
+**Teze Katkısı:** Otonom araçlar üzerindeki kameralar ve işlemciler (örneğin NVIDIA Jetson serisi), kendi başlarına oldukça kritik ve mobil birer "Uç Cihaz (Edge Device)" olarak kabul edilirler. Bu makale, derin öğrenme algoritmalarının bu tarz donanım kısıtlı cihazlarda çalıştırılmasının doğası gereği ciddi performans (gecikme) zorlukları içerdiğini doğrular. Tezinizde, saf Python kullanmanın yaratacağı bellek ve işlemci darboğazlarını aşmak için neden C++ ile hibrit bir mimari kurmanız gerektiğini, otonom aracın bir "Edge" sistemi olduğu gerçeği üzerinden teknik olarak savunmanıza güçlü bir altyapı sağlar.
+
+## Paper 22
+
+### Makale Bilgisi
+- **Makale Adı:** Performance Evaluation of Deep Learning Compilers for Edge Inference
+- **Yazarlar:** Gaurav Verma, Yashi Gupta, Abid M. Malik, Barbara Chapman
+- **Yıl:** 2021
+- **Yayın Yeri:** 2021 IEEE International Parallel and Distributed Processing Symposium Workshops (IPDPSW)
+- **DOI / Link:** 10.1109/IPDPSW52791.2021.00128
+
+### Çalışmanın Amacı
+Derin öğrenme modellerinin otonom araçlar, dronlar ve IoT cihazları gibi kısıtlı işlem gücüne sahip uç cihazlarda (edge devices) çalıştırılması önemli bir darboğaz yaratmaktadır. Bu çalışma, PyTorch veya TensorFlow gibi platformlarda (çoğunlukla Python kullanılarak) eğitilmiş standart modellerin, uç cihazlarda daha hızlı ve düşük gecikme (latency) ile çalışabilmesi için geliştirilen TensorRT, TensorFlow Lite ve TVM gibi derin öğrenme derleyicilerini (DL compilers) Jetson Nano ve Raspberry Pi üzerinde kıyaslamaktadır.
+
+**Teze Katkısı:** Bu çalışma tezinizin kodlama ve donanım mimarisi (Python vs C++) altyapısına muazzam bir destek sağlar. Python, derin öğrenme modellerini eğitmek ve hızlı prototipleme yapmak için harikadır; ancak otonom sürüşte (gerçek zamanlılık gerektiğinde) saf Python kodunun C++ (veya TensorRT/TVM gibi C/C++ tabanlı derleyiciler) kadar hızlı olamayacağı bilinen bir gerçektir. Bu makale, modellerin donanım seviyesinde optimize edilmesiyle (derlenmesiyle) gecikme sürelerinin nasıl dramatik bir şekilde düştüğünü göstermektedir. Tezinizde, görüntü iyileştirme algoritmalarının "Saf Python" versiyonları ile "C++ veya Optimize Edilmiş (Hibrit)" versiyonları arasındaki performans (FPS/milisaniye) farklarını analiz ederken argümanlarınızı bu çalışmaya dayandırabilirsiniz.
+
+## Paper 23
+
+### Makale Bilgisi
+- **Makale Adı:** Lightweight Low-Light Image Enhancement Techniques for Edge Devices
+- **Yazarlar:** Ebin J Alapatt, Pankaj Kumar G, Narayanan V Eswar, Aman K Shihab, S Krishna Bhatt, Sreevishnu Damodaran, A A Aswathy
+- **Yıl:** 2025
+- **Yayın Yeri:** 2025 Advanced Computing and Communication Technologies for High Performance Applications (ACCTHPA)
+- **DOI / Link:** 10.1109/ACCTHPA65749.2025.11168575
+
+### Çalışmanın Amacı
+Otonom navigasyon ve güvenlik gibi uygulamalarda bilgisayarlı görü sistemlerinin gece veya düşük ışıkta ciddi zorluklar yaşadığı bilinmektedir. Bu çalışma, söz konusu sistemlerin genellikle sınırlı bellek ve işlem gücüne sahip "Uç Cihazlar" (Edge Devices) üzerinde çalıştırıldığını göz önüne alarak, hem geleneksel (Gri seviye dönüşümü, Gama, Retinex) hem de derin öğrenme tabanlı düşük ışık iyileştirme algoritmalarının **"hafiflik" (lightweight)** potansiyellerini ve uç cihazlara uyumluluklarını kapsamlı bir şekilde incelemektedir.
+
+**Teze Katkısı:** Bu makale, tezinizdeki Python vs. C++ performans kıyaslamasının "neden" gerekli olduğunu savunan çok taze (2025) bir çerçeve sunar. Çalışma, uç cihazlarda kullanılacak algoritmaların hesaplama gücü ve depolama kısıtlarına saygı göstermesi ve "gerçek zamanlı" işleme yeteneğine sahip olması gerektiğini açıkça belirtir. Tezinizin Giriş ve Yöntem bölümlerinde *"Ağır derin öğrenme modelleri otonom araçlardaki (Edge Device) işlemcilere darboğaz yaratmaktadır; bu nedenle algoritmaların C++ gibi alt seviye diller kullanılarak hafifletilmesi ve optimize edilmesi gereklidir"* şeklindeki teorik iddianızı temellendirebileceğiniz doğrudan bir referanstır.
+
+## Paper 24
+
+### Makale Bilgisi
+- **Makale Adı:** Lightweight object detection in low light: Pixel-wise depth refinement and TensorRT optimization
+- **Yazarlar:** K. Vinoth, Sasikumar P
+- **Yıl:** 2024
+- **Yayın Yeri:** Results in Engineering (Elsevier)
+- **DOI / Link:** (Eklenecek)
+
+### Çalışmanın Amacı
+Düşük ışıklı ortamlarda yüksek gürültü ve düşük kontrast nedeniyle nesne tespitinin zorlaşması problemini, hem görsel doğruluğu artırarak hem de çıkarım (inference) hızını optimize ederek çözmeyi amaçlamaktadır. Çalışma, her pikselin derinlik eğrisini tahmin eden bir derin öğrenme modeli (Pixel-wise depth refinement) kullanarak detayları belirginleştirirken, nesne tespiti görevini NVIDIA'nın **TensorRT** motoruyla optimize edilmiş hafif bir YOLOv8 modeli ile gerçekleştirir. Bu sayede modelin hesaplama karmaşıklığı ve bellek kullanım alanı (memory footprint) ciddi oranda azaltılarak kaynakları kısıtlı cihazlarda daha hızlı yanıt süreleri hedeflenmiştir.
+
+**Teze Katkısı:** Bu makale, tezinizdeki en kritik sorulardan birine doğrudan bir çözüm senaryosu sunar: *"Python'da eğitilen ağır yapay zeka modelleri, Jetson Orin gibi uç cihazlarda (edge devices) nasıl gerçek zamanlı çalıştırılır?"* Makalenin TensorRT (NVIDIA'nın C++ tabanlı yüksek performanslı derin öğrenme çıkarım motoru) kullanarak YOLOv8'in hızını optimize etmesi, tezinizin **hibrit mimari (Python-C++)** argümanını mükemmel bir şekilde destekler. Görüntü iyileştirme algoritmalarının Python yerine donanım seviyesine daha yakın araçlar ve diller (C++/TensorRT vb.) kullanılarak derlendiğinde gecikme (latency) sürelerinin nasıl düşürüldüğünü literatür üzerinden kanıtlamak için güçlü bir dayanaktır.
+
+## Paper 25
+
+### Makale Bilgisi
+- **Makale Adı:** A Review of Recent Hardware and Software Advances in GPU-Accelerated Edge-Computing Single-Board Computers (SBCs) for Computer Vision
+- **Yazarlar:** Umair Iqbal, Tim Davies, Pascal Perez
+- **Yıl:** 2024
+- **Yayın Yeri:** Sensors (MDPI)
+- **DOI / Link:** 10.3390/s24154830
+
+### Çalışmanın Amacı
+Bulut bilişimin (Cloud Computing) getirdiği bant genişliği sorunları, yüksek gecikme (latency) ve veri gizliliği risklerini aşmak için bilgisayarlı görü işlemlerinin doğrudan kameranın bulunduğu uç cihaza (edge device) taşınması gerekmektedir. Bu makale, otonom araçlarda da sıkça kullanılan GPU hızlandırmalı Tek Kartlı Bilgisayarların (SBC - NVIDIA Jetson serisi, Raspberry Pi vb.) donanım kapasitelerini ve bu donanımlardan maksimum verimi almak için kullanılan yazılım optimizasyon araçlarını (TensorRT, OpenVINO, ONNX Runtime) sistematik olarak incelemeyi amaçlamaktadır.
+
+## Paper 26
+
+### Makale Bilgisi
+- **Makale Adı:** Learning Optimized Low-Light Image Enhancement for Edge Vision Tasks
+- **Yazarlar:** SMA Sharif, Azamat Myrzabekov, Nodirkhuja Khujaev, Roman Tsoy, Seongwan Kim, Jaeho Lee
+- **Yıl:** 2024
+- **Yayın Yeri:** CVPR Workshops
+- **DOI / Link:** (Eklenecek)
+
+### Çalışmanın Amacı
+Mevcut düşük ışıklı görüntü iyileştirme yöntemlerinin yüksek hesaplama maliyetleri nedeniyle "uç görüş (edge vision)" uygulamaları için pratik olmaması sorununu çözmeyi amaçlamaktadır. Araştırmacılar, mobil uyumlu ve son derece hafif bir derin öğrenme ağı tasarlamış, ardından bu modeli INT8 hassasiyetinde eğitim sonrası kuantizasyon (post-training quantization - PTQ) stratejisi ile optimize etmişlerdir. Sonuç olarak düşük güçlü bir uç cihazda saniyede 199 kare (FPS) işleme hızına ulaşılmış ve bu iyileştirmenin diğer görüş algoritmalarının (nesne tespiti vb.) performansını da ciddi oranda artırdığı kanıtlanmıştır.
+
+**Teze Katkısı:** Bu çalışma, tezinizin donanım performansı ve "gerçek zamanlılık" hedeflerini doğrudan vuran, CVPR 2024 tarihli son derece prestijli bir kaynaktır. Jetson Orin Nano gibi uç cihazlarda Python tabanlı modelleri çalıştırırken yaşanan yavaşlık sorunlarını aşmak için C++ optimizasyonuna ek olarak "INT8 Kuantizasyonu" gibi model hafifletme (lightweight) tekniklerini de tezinizin teorik tartışmalarına dahil etmenizi sağlayacaktır. 199 FPS gibi ölçülebilir bir hedef sunması, kendi hibrit mimarinizin gecikme (latency) testlerinde kıyaslama (benchmark) yapabileceğiniz çok güçlü bir referanstır.
+
+## Paper 27
+
+### Makale Bilgisi
+- **Makale Adı:** Generic programming in modern C++ for Image Processing
+- **Yazarlar:** Michaël Roynard
+- **Yıl:** 2022
+- **Yayın Yeri:** Doctoral Thesis, Sorbonne Université (HAL)
+- **DOI / Link:** tel-03922670
+
+### Çalışmanın Amacı
+Bu doktora tezi, görüntü işleme kütüphanelerinin (framework) geliştirilmesinde Modern C++'ın sunduğu jenerik programlama (generic programming) yeteneklerini kullanarak yüksek performanslı ve yeniden kullanılabilir algoritmalar tasarlamayı amaçlamaktadır. Yazar; görüntü işleme algoritmalarının C++ tarafında nasıl optimize edileceğini, şablon meta programlamanın (template metaprogramming) avantajlarını ve özellikle C++ tabanlı algoritmaların Python gibi dinamik dillere (Python binding) bağlanması sırasında ortaya çıkan performans kayıplarını (overhead) detaylı mikro-benchmark testleriyle (timeit) analiz etmiştir.
+
+**Teze Katkısı:** Bu kapsamlı tez çalışması, projenizin doğrudan "Uygulama/Yazılım Mimarisi" bölümü için muazzam bir destek sağlar. Görüntü iyileştirme modellerinizi saf Python ile çalıştırmak yerine, neden arkada C++ kodlarını çağıran "Hibrit bir Mimari" (Python-C++ binding) kurduğunuzu akademik bir temele oturtur. Dahası, C++ içindeki farklı tasarım tercihlerinin (örneğin sanal fonksiyonlar vs. statik çözünürlük) Python'a aktarılan gecikme sürelerini (latency/ms) nasıl etkilediğini açıklayarak, tezinizdeki performans karşılaştırma tablolarınızı ve kod optimizasyonu argümanlarınızı yazılım mühendisliği perspektifinden çok daha güçlü savunmanıza imkan tanır.
+
+## Paper 28
+
+### Makale Bilgisi
+- **Makale Adı:** Immersive Virtual Painting: Pushing Boundaries in Real-Time Computer Vision using OpenCV with C++
+- **Yazarlar:** Satyam Mishra, Phung Thao Vi, Vu Duy Trung
+- **Yıl:** 2023
+- **Yayın Yeri:** Proceedings of the Eighth International Conference on Research in Intelligent Computing in Engineering
+- **DOI / Link:** 10.15439/2023R58
+
+### Çalışmanın Amacı
+Bu çalışma, gerçek zamanlı bilgisayarlı görü (real-time computer vision) tekniklerini kullanarak sürükleyici bir sanal boyama (virtual painting) uygulaması geliştirmeyi amaçlamaktadır. Yazarlar, canlı video akışlarından belirli renkleri tespit edip dijital bir tuvale yansıtmak için OpenCV kütüphanesini C++ ile entegre bir şekilde uygulamışlardır. Kare başına 15ms gibi işlem sürelerine ulaşarak ultra düşük gecikmeli (ultra-low latency) etkileşimler sağlamışlar ve paralel işleme stratejileriyle performans kazanımları elde etmişlerdir.
+
+**Teze Katkısı:** Makalenin teziniz için en can alıcı noktası, bilgisayarlı görü görevleri için yapılan karşılaştırmalı analizde **C++ kullanımının Python'a göre 3-4 kat daha hızlı yürütüldüğünü (3-4x faster execution)** doğrudan kanıtlamasıdır. Bu sonuç, tezinizin odak noktasını oluşturan "gerçek zamanlılık gerektiren sistemlerde pure Python yerine C++ veya hibrit mimari kullanılmalıdır" argümanınızı, tamamen OpenCV kütüphanesi özelindeki performans kıyaslamalarına dayandırarak son derece somut bir şekilde savunmanızı sağlayacaktır.
+
+## Paper 29
+
+### Makale Bilgisi
+- **Makale Adı:** Parallel Optimization of OpenCV Functions: Enhancing Image Processing Efficiency with Multi-core CPU Execution
+- **Yazarlar:** Ali Nasir
+- **Yıl:** Belirtilmemiş (Referanslara göre 2022 sonrası)
+- **Yayın Yeri:** Bağımsız Araştırma (Independent Researcher)
+- **DOI / Link:** (Eklenecek)
+
+### Çalışmanın Amacı
+OpenCV kullanılarak yapılan görüntü işleme görevlerinde (filtreleme, kenar tespiti, renk uzayı dönüşümü vb.) GPU gibi özel donanım hızlandırıcılarına erişimin olmadığı durumlarda, işlem sürelerini kısaltmak hedeflenmektedir. Bu amaçla, Python'ın yerleşik `multiprocessing` (çoklu işlem) kütüphanesinden faydalanılarak, OpenCV iş yükleri çok çekirdekli bir CPU üzerinde paralelleştirilmiş ve toplu işlemlerin (batch processing) çalışma süresinde belirgin düşüşler sağlanmıştır.
+
+**Teze Katkısı:** Otonom araç kameralarından gelen verileri işlerken Python kodunuzun yavaşlığını salt dilin kendisine bağlamadan önce, kodun "paralel işlem" kapasitesini ölçmeniz metodolojik bir gerekliliktir. Bu çalışma, saf Python'ın kendi olanakları dahilinde maksimum verime ("optimize edilmiş Python baseline") ulaştığında bile C++ mimarisi karşısında nasıl bir performans sergileyeceğini adil bir şekilde kıyaslayabilmeniz için son derece pratik ve sağlam bir köşe taşı oluşturmaktadır.
+
+## Paper 30
+
+### Makale Bilgisi
+- **Makale Adı:** TVM: An Automated End-to-End Optimizing Compiler for Deep Learning
+- **Yazarlar:** Tianqi Chen, Thierry Moreau, Ziheng Jiang, Lianmin Zheng, Eddie Yan, Haichen Shen, Meghan Cowan, Leyuan Wang, Yuwei Hu, Luis Ceze, Carlos Guestrin, Arvind Krishnamurthy
+- **Yıl:** 2018
+- **Yayın Yeri:** 13th USENIX Symposium on Operating Systems Design and Implementation (OSDI '18)
+- **DOI / Link:** (Eklenecek)
+
+### Çalışmanın Amacı
+Makine öğrenmesi modellerinin CPU, GPU ve alana özgü yapay zeka hızlandırıcıları (domain-specific accelerators) gibi çok çeşitli donanım arka planlarında verimli bir şekilde çalıştırılması zor bir problemdir. Mevcut derin öğrenme çerçeveleri (framework'leri), her yeni donanım türü için dar ve manuel olarak optimize edilmiş kütüphanelere dayanır. Bu çalışma, çeşitli derin öğrenme modellerini alıp doğrudan hedef donanımın özelliklerine göre (grafik ve operatör düzeyinde) optimize eden ve derleyen (compile eden) açık kaynaklı **TVM (Tensor Virtual Machine)** mimarisini tanıtmaktadır. TVM, Raspberry Pi gibi düşük güçlü uç cihazlardan sunucu GPU'larına kadar geniş bir donanım yelpazesinde çıkarım gecikmesini (inference latency) ciddi oranda azaltmaktadır.
+
+**Teze Katkısı:** Bu çalışma, yapay zeka sistem mimarisi alanındaki en önemli köşe taşlarından biridir. Tezinizde düşük ışık görüntü iyileştirme algoritmalarının performansını test ederken, *"Modelleri neden doğrudan Python'da (PyTorch/TensorFlow) çalıştırmıyoruz da C++ tabanlı derleyicilere veya optimize edilmiş araçlara aktarıyoruz?"* sorusunun cevabını bilimsel olarak verir. Makale, bir modelin donanım seviyesinde (örneğin Jetson serisi veya Raspberry Pi'de) optimize edilebilmesi için arka planda çalışan C++ tabanlı derleme süreçlerinin ve bellek optimizasyonlarının, Python'ın getirdiği aşırı yükleri (overhead) nasıl sildiğini gösteren temel kaynaktır. Tezinizin metodolojisinde ve teknik altyapısında "Derin Öğrenme Derleyicilerinin (Deep Learning Compilers) Önemi" başlığını savunmak için referans göstereceğiniz başlıca kaynaktır.
