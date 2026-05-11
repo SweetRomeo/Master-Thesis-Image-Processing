@@ -34,6 +34,10 @@ Bu tablo, yüksek lisans tezi kapsamında incelenen makaleleri sistemli şekilde
 | 11 | Low-light image enhancement by deep learning network for improved illumination map | Manli Wang, Jiayue Li, Changsen Zhang  | 2023 | Düşük Işıklı Görüntü İyileştirme (Aydınlatma Haritası ve Gürültü Kontrolü)  | Retinex Teorisi + CNN: Üç alt modül (ayrıştırma, aydınlatma, yansıma). Aydınlatma modülünde **Derinlemesine Ayrılabilir Evrişim (DSC)** kullanımı. | LOL dataset  | PSNR, SSIM, LOE, NIQE  | Modeli basit ve etkili tutarak gürültüyü artırmadan iyileştirme yapmayı amaçlar; doğrudan FPS/ms karşılaştırması sunmaz. | Kullanılan **DSC (Depth-Separable Convolution)** tekniği, derin öğrenme modellerini hafifletmek için kritiktir. Hibrit (C++/Python) mimari tasarımında hesaplama yükünü azaltacak yöntemler için teknik referans sağlar. | Otonom sürüşe özgü nesne tespiti testleri veya gömülü donanım (Jetson vb.) üzerinde Python-C++ çalışma süresi (latency) kıyaslaması içermez. |
 | 12 | R2RNet: Low-light image enhancement via Real-low to Real-normal Network | Jiang Hai, Zhu Xuan, Ren Yang, Yutong Hao, Fengzhu Zou, Fang Lin, Songchen Han | 2023 | Gerçek Dünya Düşük Işıklı Görüntü İyileştirme | Retinex tabanlı R2RNet: Decom-Net (ayrıştırma), Denoise-Net (gürültü giderme) ve Relight-Net (aydınlatma) | Gerçek dünya düşük/normal ışık görüntü çiftleri (Real-world pairs) | PSNR, SSIM vb. (Standart metrikler) | Mekansal ve frekans bilgisini birlikte kullanarak detayları koruyan dayanıklı (robust) yapı | Sentezlenmiş veriler yerine gerçek dünya verileriyle eğitilmesi ve frekans bilgisini kullanması, otonom araçlardaki detay koruma ihtiyacı için kritiktir. | Doğrudan otonom sürüş görevlerindeki (obje tespiti) etkisi veya Python-C++ dil temelli gecikme kıyaslaması sunmamaktadır. |
 | 13 | Zero-Reference Deep Curve Estimation for Low-Light Image Enhancement | Chunle Guo, Chongyi Li, Jichang Guo, Chen Change Loy, Sam Kwong, Runmin Cong | 2020 | Referanssız (Zero-reference) İyileştirme | DCE-Net: Hafif bir ağ ile görüntüye özgü eğri tahmini | SICE (Eğitim), LIME, DICM, MEF, VV, NPE (Test) | PSNR, SSIM, MAE, User Study, PI, Yüz Tespiti | **Saniyede 500 Kare (500 FPS)** çıkarım hızı (640x480 görüntüler için GPU'da). | Otonom araçlar için hayati olan yüksek FPS değerlerini sağlayan en verimli modellerden biridir; hibrit mimari için temel benchmark adayıdır. | Çok düşük ışıklı (extremely low-light) sahnelerde sinyal doğruluğu, daha ağır modellere göre sınırlı kalabilir. |
+| 13 | Zero-Reference Deep Curve Estimation for Low-Light Image Enhancement | Chunle Guo, Chongyi Li, Jichang Guo, Chen Change Loy, Junhui Hou, Sam Kwong, Runmin Cong | 2020 | Referanssız (Zero-reference) İyileştirme | DCE-Net: Hafif bir ağ ile görüntüye özgü eğri tahmini | SICE, LIME, DICM, MEF vb. | PSNR, SSIM, MAE, Yüz Tespiti | Saniyede 500 Kare (500 FPS) çıkarım hızı | Yüksek FPS değerlerini sağlayan en verimli benchmark adayıdır | Çok düşük ışıklı sahnelerde sinyal doğruluğu sınırlı kalabilir |
+| 14 | Bridging Robustness and Efficiency: Real-Time Low-Light Enhancement via Attention U-Net GAN | [cite_start]Yash Thesia, Meera Suthar  | [cite_start]2026  | [cite_start]Gerçek Zamanlı Düşük Işıklı Görüntü İyileştirme (Difüzyon Gecikmesi vs CNN Düzleştirmesi)  | [cite_start]Attention U-Net GAN: Hafif U-Net omurgası ve Dikkat Kapıları (Attention Gates) içeren çekişmeli ağ  | [cite_start]SID veri seti  | [cite_start]LPIPS (0.112 skoru)  | [cite_start]Uç cihazlarda (edge-deployable) tek bir ileri geçişte (single forward pass) gerçek zamanlı çıkarım (real-time inference) sunar. | [cite_start]Otonom araçlardaki işlem hızını donanım üzerinde optimize etme hedefinizi doğrudan destekleyen en güncel (2026) gerçek zamanlı ağ mimarilerinden biridir. | [cite_start]C++ ve Python dilleri arasındaki bellek ve çalışma zamanı optimizasyonuna dair spesifik kodlama seviyesi metrikler içermez. |
+| 15 | UMLE: Unsupervised Multi-discriminator Network for Low Light Enhancement | [cite_start]Yangyang Qu, Kai Chen, Chao Liu, Yongsheng Ou  | [cite_start]2021  | [cite_start]Otonom Sürüş İçin Gerçek Zamanlı Denetimsiz Görüntü İyileştirme  | [cite_start]Çoklu Ayrıştırıcılı (Multi-discriminator) Denetimsiz GAN: Renk, doku ve çoklu-ölçek ayrıştırıcıları ile özellik füzyonu  | [cite_start]Otonom sürüş senaryoları ve SLAM verileri  | [cite_start]Nitel, Nicel metrikler ve SLAM yerelleştirme (localization) başarısı  | [cite_start]Otonom sistemlerde kullanılmak üzere tasarlanmış gerçek zamanlı (real-time) denetimsiz bir GAN modelidir. | [cite_start]İyileştirilmiş düşük ışıklı görüntülerin, otonom araçlardaki SLAM (eşzamanlı yerelleştirme ve haritalama) performansını görünür şekilde artırdığını kanıtlar. | [cite_start]Kullanılan algoritmanın hibrit mimariler (C++/OpenCV vb.) üzerinden CPU/RAM kullanım optimizasyonları sunulmamıştır. |
+| 16 | Vision-Based Autonomous Vehicle Systems Based on Deep Learning: A Systematic Literature Review | Monirul Islam Pavel, Siok Yee Tan, Azizi Abdullah | 2022 | Derin Öğrenme Tabanlı Görsel Otonom Araç Sistemleri (Literatür Taraması) | Sistematik Literatür Taraması (Systematic Literature Review) | Çeşitli otonom sürüş çalışmaları | - | Otonom araçların algılama ve karar verme mekanizmalarının karşılaştığı zorlukları derler. | Otonom araçlarda kamera ve görsel algı sistemlerinin önemini, çevresel faktörlerin (düşük ışık, hava koşulları) yarattığı zorlukları tezinizin giriş bölümünde geniş bir bağlamla sunmak için temel referanstır. | Doğrudan yeni bir düşük ışıklı görüntü iyileştirme algoritması veya performans optimizasyonu önermeyen genel bir derlemedir. |
 
 ---
 
@@ -222,5 +226,46 @@ Sentetik (yapay olarak karartılmış) görüntüler yerine gerçek dünya düş
 
 ### Çalışmanın Amacı
 Eşleşmiş (paired) veya eşleşmemiş (unpaired) referans görüntülere ihtiyaç duymadan, düşük ışıklı görüntüleri iyileştirmeyi amaçlayan **Zero-Reference** bir yöntem sunmaktır. Önerilen DCE-Net, her bir piksel için dinamik aralığı ayarlayan yüksek dereceli eğriler tahmin eder ve bu süreci referanssız kayıp fonksiyonları (spatial consistency, exposure control vb.) ile yönetir.
+
+## Paper 14
+
+### Makale Bilgisi
+- [cite_start]**Makale Adı:** Bridging Robustness and Efficiency: Real-Time Low-Light Enhancement via Attention U-Net GAN 
+- [cite_start]**Yazarlar:** Yash Thesia, Meera Suthar 
+- [cite_start]**Yıl:** 2026 
+- [cite_start]**Yayın Yeri:** arXiv (2601.06518v1) 
+
+### Çalışmanın Amacı
+[cite_start]Difüzyon modellerinin (Diffusion Models) sunduğu yüksek algısal kalite ile oluşturdukları 2-4 saniyelik kabul edilemez gecikme süresi (latency) ve geleneksel CNN'lerin hızına karşılık detayları aşırı düzleştirmesi (over-smoothing) arasındaki boşluğu kapatmayı amaçlamaktadır. [cite_start]Öncelikli hedef, uç cihazlarda (edge-deployable) kullanılmak üzere tek bir ileri geçişte (single forward pass) üretici model (generative) seviyesinde yüksek frekanslı detay geri kazanımı sağlayan hibrit bir Attention U-Net GAN mimarisi oluşturmaktır.
+
+**Teze Katkısı:** Bu çalışma, donanım kapasitesi kısıtlı olabilen otonom araç platformlarında (Jetson Orin Nano vb.) algoritmaların "gerçek zamanlılık" (real-time) özelliğinin ne kadar kritik olduğunu 2026 yılının en güncel verileriyle kanıtlar. Hibrit sistem tasarımınızda model gecikmelerini C++ entegrasyonu ile neden optimize etmeniz gerektiğini savunurken doğrudan kullanabileceğiniz güçlü bir modern yaklaşımdır.
+
+## Paper 15
+
+### Makale Bilgisi
+- **Makale Adı:** UMLE: Unsupervised Multi-discriminator Network for Low Light Enhancement 
+- **Yazarlar:** Yangyang Qu, Kai Chen, Chao Liu, Yongsheng Ou 
+- **Yıl:** 2021 
+- **Yayın Yeri:** 2021 IEEE International Conference on Robotics and Automation (ICRA) 
+- **DOI / Link:** 10.1109/ICRA48506.2021.9561051 
+
+### Çalışmanın Amacı
+Otonom sürüş senaryolarında düşük ışık koşullarının görme tabanlı uygulamalar üzerinde yarattığı ciddi sorunları çözmek için gerçek zamanlı, denetimsiz (unsupervised) bir Üretken Çekişmeli Ağ (GAN) geliştirmeyi hedefler. [cite_start]Mimaride; görüntüleri farklı açılardan değerlendirmek için çok ölçekli, doku ve renk odaklı birden fazla ayrıştırıcı (multi-discriminator) kullanılmış ve özellik füzyonunda piksel ile kanal dikkat mekanizmaları (attention module) birleştirilmiştir.
+
+**Teze Katkısı:** Geliştirilen görüntü iyileştirme yöntemlerinin, otonom araçların çevreyi haritalaması ve kendi konumunu bulması (SLAM - Simultaneous Localization and Mapping) görevleri üzerindeki etkisini doğrudan kanıtlayan bir çalışmadır. İyileştirme algoritmalarının sadece görsel kaliteyi değil, otonom aracın karar alma ve yön bulma mekanizmalarını nasıl iyileştirdiğini anlatırken temel alınmalıdır.
+
+## Paper 16
+
+### Makale Bilgisi
+- **Makale Adı:** Vision-Based Autonomous Vehicle Systems Based on Deep Learning: A Systematic Literature Review [cite: 16]
+- **Yazarlar:** Monirul Islam Pavel, Siok Yee Tan, Azizi Abdullah [cite: 16]
+- **Yıl:** 2022 [cite: 16]
+- **Yayın Yeri:** Applied Sciences (MDPI) [cite: 16]
+- **DOI / Link:** 10.3390/app12146831 [cite: 16]
+
+### Çalışmanın Amacı
+Son on yılda hızla gelişen otonom araç sistemlerinde (AVS) kullanılan derin öğrenme tabanlı görme/kamera (vision-based) sistemlerini sistematik bir şekilde taramayı ve derlemeyi (Systematic Literature Review) amaçlamaktadır[cite: 16]. [cite_start]Otonom araçların algılama ve karar verme süreçlerindeki mevcut durumları, yapay zeka entegrasyonunu ve bu sistemlerin sahada karşılaştığı çeşitli zorlukları bir araya getirir[cite: 16].
+
+**Teze Katkısı:** Tezinizin "Giriş" (Introduction) ve "Problem Tanımı" (Problem Definition) bölümlerini yazarken, otonom araçların çevresel koşullardan (özellikle düşük ışık) neden bu kadar fazla etkilendiğini açıklamak ve görüntü iyileştirmenin bu sistemlerdeki geniş önemini okuyucuya aktarmak için harika bir çerçeve (framework) makalesidir.
 
 **Teze Katkısı:** Otonom araçların anlık tepki verebilmesi için görüntü işleme hattının çok düşük gecikme süresine sahip olması gerekir. Zero-DCE'nin sunduğu **500 FPS** gibi olağanüstü işlem hızı, tezinizde C++ ve Python hibrit mimarisinin hız performansını kıyaslarken kullanacağınız en verimli ve modern referans noktalarından birini oluşturur.
