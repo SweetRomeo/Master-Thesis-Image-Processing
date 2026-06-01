@@ -39,3 +39,18 @@
 
 # debug information files
 *.dwo
+
+# CLion / JetBrains
+.idea/
+
+# CMake build folders
+cmake-build-debug/
+cmake-build-release/
+build/
+out/
+
+# CMake generated files
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
