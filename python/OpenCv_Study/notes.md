@@ -114,3 +114,43 @@ else:
 -1  -> hem yatay hem dikey çevirir
 ```
 şeklindedir.
+
+## Color Spaces and Color Conversions
+
+Bir görüntünün en önemli özelliklerinden biri renk bilgisidir. OpenCV ile görüntüler üzerinde çalışırken renk kanallarının sırasını doğru anlamak gerekir.
+
+OpenCV'de `cv2.imread()` fonksiyonu ile okunan renkli görüntüler varsayılan olarak `BGR` formatında tutulur.
+Yani kanal sırası şu şekildedir:
+
+```
+Blue - Green - Red
+```
+Ancak Matplotlib kütüphanesinin `plt.imshow` fonksiyonu görüntüyü `RGB` formatında bekler:
+```
+Red - Green - Blue
+```
+Bu nedenle OpenCV ile okunan bir görüntü doğrudan Matplotlib ile gösterilirse renkler bozuk ve beklenenden
+farklı görünebilir. Özellikle kırmızı ve mavi kanallar yer değiştirmiş gibi algılanır.
+
+Bu problemi çözmek için OpenCV'deki `cv2.cvtColor()` fonksiyonu kullanılır. Aşağıdaki örnekte BGR formatında
+okunan görüntü RGB formatına çevrilerek Matplotlib ile doğru renklerde gösterilmiştir:
+
+```python
+import cv2
+import matplotlib.pyplot as plt
+
+img_bgr = cv2.imread("./images/dog.jpg")
+
+img_rgb = cv2.cvtColor(img_bgr, cv2.COLOR_BGR2RGB)
+
+plt.imshow(img_rgb)
+plt.axis("off")
+plt.show()
+```
+
+Burada:
+`img_bgr` OpenCV'nin kullandığı `BGR` formatındaki görüntüdür.
+`img_rgb` Matplotlib ile doğru şekilde göstermek için RGB formatına dönüştürülmüş görüntüdür.
+
+Kısaca, OpenCV ile görüntü işleme yaparken BGR formatı kullanılırken Matplotlib ile görüntü gösterirken `RGB` formatına
+dönüşüm gerekir.

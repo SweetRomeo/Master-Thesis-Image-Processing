@@ -6,8 +6,11 @@ import cv2
 
 image = cv2.imread("./images/dog.jpg")
 
-if image is None:
-    image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+while True:
+    cv2.imshow("Puppy", image)
 
-cv2.imshow("Image", image)
-cv2.waitKey(0)
+    # If we've waited at least 1 ms, and we've pressed the esc
+    if cv2.waitKey(1) & 0xFF == 27:
+        break
+
+cv2.destroyAllWindows()
