@@ -147,3 +147,77 @@ Burada yorum satırında da belirtildiği üzere:
 -1  -> hem yatay hem dikey çevirir
 ```
 şeklindedir.
+
+## Color Spaces and Color Conversions
+
+Bir görüntünün en önemli özelliklerinden biri renk bilgisidir. OpenCV ile görüntüler üzerinde çalışırken renk kanallarının sırasını doğru anlamak gerekir.
+
+OpenCV'de `cv::imread()` fonksiyonu ile okunan renkli görüntüler varsayılan olarak `BGR` formatında tutulur.
+Yani kanal sırası şu şekildedir:
+
+```
+Blue - Green - Red
+```
+
+Bu durum OpenCV'nin hem Python hem de C++ tarafında geçerlidir. Ancak C++ tarafında görüntü gösterme işlemi genellikle cv::imshow() fonksiyonu ile yapıldığı için, BGR formatındaki görüntü doğrudan doğru renklerle gösterilir.
+
+Yani C++ tarafında şu kullanım doğrudur:
+```
+cv::imshow("Image", img_bgr);
+```
+Buna rağmen bazı durumlarda görüntüyü farklı renk uzaylarına dönüştürmek gerekebilir. Örneğin:
+
+- `BGR` formatından RGB formatına dönüştürme
+- `BGR` formatından Grayscale formatına dönüştürme
+- `BGR` formatından HSV formatına dönüştürme
+
+OpenCV'de bu dönüşümler için `cv::cvtColor()` fonksiyonu kullanılır.
+
+Aşağıdaki örnekte bir görüntü okunmuş, ardından farklı renk uzaylarına dönüştürülmüştür:
+
+```cpp
+#include <iostream>
+#include <opencv2/opencv.hpp>
+
+int main() {
+    cv::Mat img_bgr = cv::imread("./images/dog.jpg");
+    if (img_bgr.empty()) {
+        std::cout << "Image could not be loaded.\n";
+        return -1;
+    }
+    cv::Mat img_rgb;
+    cv::Mat img_gray;
+    cv::Mat img_hsv;
+    cv::cvtColor(img_bgr, img_rgb, cv::COLOR_BGR2RGB);
+    cv::cvtColor(img_bgr, img_gray, cv::COLOR_BGR2GRAY);
+    cv::cvtColor(img_bgr, img_hsv, cv::COLOR_BGR2HSV);
+    cv::imshow("Original BGR Image", img_bgr);
+    cv::imshow("Grayscale Image", img_gray);
+    cv::imshow("HSV Image", img_hsv);
+    cv::waitKey(0);
+    return 0;
+}
+```
+
+Burada `cv::cvtColor()` fonksiyonu görüntüyü bir renk formatından başka bir renk formatına dönüştürmek için kullanılır.
+
+Genel kullanım şekli şu şekildedir:
+```
+cv::cvtColor(source, destination, conversion_code);
+```
+Örneğin:
+```
+cv::cvtColor(img_bgr, img_gray, cv::COLOR_BGR2GRAY);
+```
+Bu satırda `img_bgr` isimli BGR formatındaki görüntü gri seviye görüntüye dönüştürülür ve sonuç `img_gray` değişkeninde saklanır.
+
+Benzer şekilde:
+```
+cv::cvtColor(img_bgr, img_rgb, cv::COLOR_BGR2RGB);
+```
+Bu satırda görüntü `BGR` formatından `RGB` formatına çevrilir. Ancak C++ tarafında `cv::imshow()` kullanırken genellikle RGB formatına çevirmeye gerek yoktur. Çünkü `cv::imshow()` OpenCV'nin kendi görüntü gösterme fonksiyonudur ve `BGR` formatındaki görüntüyü doğru şekilde gösterir.
+
+Kısaca, OpenCV C++ tarafında görüntüler varsayılan olarak BGR formatında tutulur. Görüntüyü farklı renk uzaylarına çevirmek için `cv::cvtColor()` fonksiyonu kullanılır.
+
+## Görüntü Oluşturma
+

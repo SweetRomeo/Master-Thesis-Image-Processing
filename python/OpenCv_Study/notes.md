@@ -154,3 +154,104 @@ Burada:
 
 Kısaca, OpenCV ile görüntü işleme yaparken BGR formatı kullanılırken Matplotlib ile görüntü gösterirken `RGB` formatına
 dönüşüm gerekir.
+
+## Görüntü Oluşturma
+
+Görüntü oluşturmak için pythonda kullanılan fonksiyon `cv2.imwrite` fonksiyonudur.
+Bu fonksiyon ile ilgili aşağıdaki örneği inceleyiniz:
+```python
+import cv2
+
+img = cv2.imread("./images/dog.jpg")
+img_saved = cv2.imwrite("./outputs/dog_saved.jpg", img)
+
+if img_saved:
+    print("Görüntü başarıyla kayıt edildi.")
+else: 
+    print("Görüntü kaydedilemedi.")
+```
+
+Burada `cv2.imwrite()` fonksiyonunun ilk parametresi görüntünün kaydedileceği dosya yolunu ifade eder. İkinci parametre ise kaydedilecek görüntüyü temsil eder.
+
+Genel kullanım şekli şu şekildedir:
+```
+cv2.imwrite(file_path, image)
+```
+Örneğin:
+```
+cv2.imwrite("./outputs/dog_saved.jpg", img)
+```
+Bu kod, `img` değişkeninde tutulan görüntüyü `outputs` klasörünün içerisine 
+`dog_saved.jpg` adıyla kaydeder.
+
+Dikkat edilmesi gereken noktalardan biri, görüntünün kaydedileceği klasörün önceden oluşturulmuş olmasıdır. Örneğin `outputs` 
+klasörü mevcut değilse kaydetme işlemi başarısız olabilir.
+
+Kısaca, `cv2.imwrite()` fonksiyonu OpenCV'de görüntüyü dosyaya yazmak veya kaydetmek 
+için kullanılır.
+
+## Görüntü Eşikleme(Thresholding)
+
+Görüntü eşikleme, görüntü işlemede sık kullanılan temel tekniklerden biridir. Bu işlemde görüntüdeki piksel değerleri belirli bir eşik değerine göre sınıflandırılır.
+
+Özellikle gri seviye görüntülerde her pikselin değeri `0` ile `255` arasındadır. Eşikleme işleminde belirlenen bir eşik değerinin üstünde kalan pikseller genellikle beyaz, altında kalan pikseller ise siyah yapılır.
+
+Bu yöntem sayesinde görüntüdeki belirli bölgeler daha belirgin hale getirilebilir. Aynı zamanda arka plan gibi önemsiz bölgeler bastırılarak ilgilenilen nesneler daha kolay analiz edilebilir.
+
+OpenCV'de eşikleme işlemi için `cv2.threshold()` fonksiyonu kullanılır.
+```python
+import cv2
+import matplotlib.pyplot as plt
+
+img = cv2.imread("./images/dog_backpack.jpg")
+img_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+
+ret, thresh = cv2.threshold(img_gray, 127, 255, cv2.THRESH_BINARY)
+
+plt.figure(figsize=(10, 5))
+
+plt.subplot(1, 2, 1)
+plt.imshow(img_gray, cmap="gray") 
+plt.title("Grayscale Image") 
+plt.axis("off")
+
+plt.subplot(1, 2, 2) 
+plt.imshow(thresh, cmap="gray") 
+plt.title("Thresholded Image") 
+plt.axis("off") 
+plt.show()
+```
+
+Burada `cv2.threshold()` fonksiyonu iki değer döndürür:
+
+```
+ret, thresh = cv2.threshold(img_gray, 127, 255, cv2.THRESH_BINARY)
+```
+`ret`, kullanılan eşik değeridir. Bu örnekte `127` değerini döndürür.
+
+`thresh` ise eşikleme işlemi sonucunda oluşan yeni görüntüdür.
+
+Fonksiyonun parametreleri şu şekildedir:
+```
+cv2.threshold(source, threshold_value, max_value, threshold_type)
+```
+
+Bu örnekte: 
+```
+cv2.threshold(img_gray, 127, 255, cv2.THRESH_BINARY)
+```
+`img_gray`, eşikleme uygulanacak gri seviye görüntüdür.
+`127`, eşik değeridir. Piksel değeri bu değerden büyükse farklı, küçükse farklı
+işlem uygulanır.
+`255`, eşik değerinin üstünde kalan piksellere verilecek maksimum değerdir.
+`cv2.THRESH_BINARY`, uygulanacak eşikleme türüdür.
+
+Bu eşikleme türünde: 
+```
+Piksel değeri > 127 ise 255 yapılır.
+Piksel değeri <= 127 ise 0 yapılır.
+```
+Yani görüntü siyah-beyaz bir yapıya dönüştürülür.
+
+## Image Blurring(Görüntü Bulanıklaştırma)
+

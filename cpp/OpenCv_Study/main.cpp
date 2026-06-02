@@ -1,33 +1,21 @@
 #include <iostream>
-#include <filesystem>
 #include <opencv2/opencv.hpp>
 
 int main() {
-    std::cout << "Working directory: "
-              << std::filesystem::current_path()
-              << "\n";
-
-    cv::Mat image = cv::imread("../images/dog.jpg");
-
-
-    if (image.empty()) {
-        std::cout << "Cannot open/read dog.jpg\n";
+    cv::Mat img_bgr = cv::imread("./images/dog.jpg");
+    if (img_bgr.empty()) {
+        std::cout << "Image could not be loaded.\n";
         return -1;
     }
-
-    cv::imshow("image", image);
+    cv::Mat img_rgb;
+    cv::Mat img_gray;
+    cv::Mat img_hsv;
+    cv::cvtColor(img_bgr, img_rgb, cv::COLOR_BGR2RGB);
+    cv::cvtColor(img_bgr, img_gray, cv::COLOR_BGR2GRAY);
+    cv::cvtColor(img_bgr, img_hsv, cv::COLOR_BGR2HSV);
+    cv::imshow("Original BGR Image", img_bgr);
+    cv::imshow("Grayscale Image", img_gray);
+    cv::imshow("HSV Image", img_hsv);
     cv::waitKey(0);
-
-    cv::resize(image, image, cv::Size(1000, 400));
-    cv::cvtColor(image, image, cv::COLOR_BGR2RGB);
-
-    cv::imshow("image", image);
-    cv::waitKey(0);
-
-    cv::flip(image, image, 0);
-
-    cv::imshow("image", image);
-    cv::waitKey(0);
-
     return 0;
 }
