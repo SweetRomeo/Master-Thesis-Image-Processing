@@ -219,5 +219,5 @@ Bu satırda görüntü `BGR` formatından `RGB` formatına çevrilir. Ancak C++ 
 
 Kısaca, OpenCV C++ tarafında görüntüler varsayılan olarak BGR formatında tutulur. Görüntüyü farklı renk uzaylarına çevirmek için `cv::cvtColor()` fonksiyonu kullanılır.
 
-## Görüntü Oluşturma
+## Görüntü Kaydetme / 
 

@@ -3,14 +3,22 @@
 # Press Shift+F10 to execute it or replace it with your code.
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 import cv2
+import numpy as np
+import matplotlib.pyplot as plt
 
-image = cv2.imread("./images/dog.jpg")
+def load_img():
+    img = cv2.imread("./images/bricks.jpg").astype(np.float32) / 255
+    img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+    return img
 
-while True:
-    cv2.imshow("Puppy", image)
+def display_img(img):
+    fig = plt.figure(figsize=(12, 10))
+    ax = fig.add_subplot(111)
+    ax.imshow(img)
 
-    # If we've waited at least 1 ms, and we've pressed the esc
-    if cv2.waitKey(1) & 0xFF == 27:
-        break
-
+img = load_img()
+display_img(img)
+gamma = 1 / 4
+gammaCorrectedImage = np.power(img, gamma)
+display_img(gammaCorrectedImage)
 cv2.destroyAllWindows()
