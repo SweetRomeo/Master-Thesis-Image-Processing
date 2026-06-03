@@ -219,5 +219,63 @@ Bu satırda görüntü `BGR` formatından `RGB` formatına çevrilir. Ancak C++ 
 
 Kısaca, OpenCV C++ tarafında görüntüler varsayılan olarak BGR formatında tutulur. Görüntüyü farklı renk uzaylarına çevirmek için `cv::cvtColor()` fonksiyonu kullanılır.
 
-## Görüntü Kaydetme / 
+## Görüntü Kaydetme / Image Saving
 
+OpenCV ile okunan veya üzerinde işlem yapılan görüntüler dosya olarak kaydedilebilir. C++ tarafında bunun için cv::imwrite() fonksiyonu kullanılır.
+
+Bu fonksiyon, cv::Mat türündeki görüntüyü belirtilen dosya yoluna kaydeder.
+
+Aşağıdaki örnekte bir görüntü okunmuş ve `outputs` klasörü içerisine farklı bir isimle kaydedilmiştir:
+```cpp
+#include <iostream>
+#include <opencv2/opencv.hpp>
+
+int main()
+{
+    cv::Mat img = cv::imread("./images/dog.jpg");
+
+    if (img.empty()) {
+        std::cout << "Image could not be loaded.\n";
+        return -1;
+    }
+
+    bool img_saved = cv::imwrite("./outputs/dog_saved.jpg", img);
+
+    if (img_saved) {
+        std::cout << "Image saved successfully.\n";
+    }
+    else {
+        std::cout << "Error occurred while saving the file.\n";
+    }
+
+    return 0;
+}
+```
+Burada `cv::imread()` fonksiyonu ile görüntü okunmuştur. Görüntünün başarılı şekilde okunup okunmadığı `img.empty()` kontrolü
+ile test edilmiştir.
+```cpp
+if (img.empty()) {
+    std::cout << "Image could not be loaded.\n";
+    return -1;
+}
+```
+Daha sonra `cv::imwrite()` fonksiyonu ile görüntü dosyaya kaydedilmiştir.
+```
+bool img_saved = cv::imwrite("./outputs/dog_saved.jpg", img);
+```
+`cv::imwrite` fonksiyonu kaydetme işlemi başarılı olursa `true`, başarısız olursa `false` değerini
+döndürür.
+
+Genel kullanım şu şekildedir:
+```
+cv::imwrite(file_path, image);
+```
+Burada `file_path`, görüntünün kaydedileceği dosya yolunu ifade eder. `image` ise kaydedilecek `cv::Mat` nesnesidir.
+
+Dikkat edilmesi gereken noktalardan biri, görüntünün kaydedileceği klasörün önceden oluşturulmuş olmasıdır. Örneğin `outputs` klasörü mevcut değilse kaydetme işlemi başarısız olabilir.
+
+Kısaca, `cv::imwrite()` fonksiyonu OpenCV C++ tarafında görüntüyü dosyaya kaydetmek için kullanılan temel fonksiyonlardan biridir.
+
+## Görüntü Eşikleme / Image Thresholding
+
+Görüntü eşikleme 
