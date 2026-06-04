@@ -1,21 +1,35 @@
 #include <iostream>
 #include <opencv2/opencv.hpp>
 
-int main() {
-    cv::Mat img_bgr = cv::imread("./images/dog.jpg");
-    if (img_bgr.empty()) {
+int main()
+{
+    cv::Mat img = cv::imread("./images/dog_backpack.jpg");
+
+    if (img.empty()) {
         std::cout << "Image could not be loaded.\n";
         return -1;
     }
-    cv::Mat img_rgb;
-    cv::Mat img_gray;
-    cv::Mat img_hsv;
-    cv::cvtColor(img_bgr, img_rgb, cv::COLOR_BGR2RGB);
-    cv::cvtColor(img_bgr, img_gray, cv::COLOR_BGR2GRAY);
-    cv::cvtColor(img_bgr, img_hsv, cv::COLOR_BGR2HSV);
-    cv::imshow("Original BGR Image", img_bgr);
-    cv::imshow("Grayscale Image", img_gray);
-    cv::imshow("HSV Image", img_hsv);
+
+    cv::Mat gray;
+    cv::cvtColor(img, gray, cv::COLOR_BGR2GRAY);
+
+    cv::Mat thresholded;
+
+    double used_threshold = cv::threshold(
+        gray,
+        thresholded,
+        127,
+        255,
+        cv::THRESH_BINARY
+    );
+
+    std::cout << "Used threshold value: " << used_threshold << '\n';
+
+    cv::imshow("Original Image", img);
+    cv::imshow("Grayscale Image", gray);
+    cv::imshow("Thresholded Image", thresholded);
+
     cv::waitKey(0);
+
     return 0;
 }

@@ -464,3 +464,238 @@ Bu yöntem basit ve hızlıdır. Ancak yalnızca ortalama parlaklığa bakmak he
 zaman yeterli olmayabilir. Çünkü bazı görüntülerde küçük bir bölge çok parlakken
 geri kalan büyük alan karanlık olabilir. Bu nedenle daha gelişmiş analizlerde
 histogram veya karanlık piksel oranı gibi ek ölçütler de kullanılabilir.
+
+## Histogram Analysis / Histogram Analizi
+
+Histogram, bir görüntüdeki piksel değerlerinin dağılımını gösteren grafiksel bir gösterimdir. Görüntü işlemede histogram analizi, görüntünün parlaklık, kontrast ve yoğunluk dağılımı hakkında bilgi verir.
+
+Özellikle gri seviye görüntülerde piksel değerleri `0` ile `255` arasında değişir. Histogram grafiğinde yatay eksen piksel değerlerini, dikey eksen ise bu piksel değerlerinden görüntüde kaç tane bulunduğunu gösterir.
+
+```text
+X ekseni -> Piksel değerleri: 0 - 255
+Y ekseni -> Piksel sayısı / frekans
+```
+
+Burada `0` siyaha, `255` ise beyaza karşılık gelir. Bu nedenle histogramın dağılımına bakarak görüntünün karanlık, parlak veya düşük kontrastlı olup olmadığı yorumlanabilir.
+
+Örneğin:
+
+```text
+Histogram sol tarafta yoğunlaşmışsa  -> görüntü karanlık olabilir.
+Histogram sağ tarafta yoğunlaşmışsa -> görüntü parlak olabilir.
+Histogram dar bir aralıkta sıkışmışsa -> görüntü düşük kontrastlı olabilir.
+Histogram geniş bir aralığa yayılmışsa -> görüntü daha yüksek kontrastlı olabilir.
+```
+
+OpenCV'de histogram hesaplamak için `cv2.calcHist()` fonksiyonu kullanılır.
+
+Genel kullanım şekli şu şekildedir:
+
+```python
+cv2.calcHist(images, channels, mask, histSize, ranges)
+```
+
+Burada:
+
+`images`, histogramı hesaplanacak görüntüyü ifade eder. Liste şeklinde verilmelidir.
+
+`channels`, hangi kanalın histogramının hesaplanacağını belirtir. Gri seviye görüntülerde genellikle `[0]` kullanılır.
+
+`mask`, görüntünün belirli bir bölgesinde histogram hesaplamak için kullanılır. Tüm görüntü için histogram hesaplanacaksa `None` verilir.
+
+`histSize`, kaç farklı değer aralığının kullanılacağını belirtir. 8-bit görüntülerde genellikle `[256]` kullanılır.
+
+`ranges`, piksel değer aralığını ifade eder. 8-bit görüntüler için genellikle `[0, 256]` kullanılır.
+
+Aşağıdaki örnekte bir görüntü gri seviyeye çevrilmiş ve histogramı çizdirilmiştir:
+
+```python
+import cv2
+import matplotlib.pyplot as plt
+
+img = cv2.imread("./images/bricks.jpg")
+
+if img is None:
+    raise FileNotFoundError("Image could not be loaded.")
+
+gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+
+hist = cv2.calcHist([gray], [0], None, [256], [0, 256])
+
+plt.figure(figsize=(10, 5))
+plt.plot(hist)
+plt.title("Grayscale Histogram")
+plt.xlabel("Pixel Intensity")
+plt.ylabel("Number of Pixels")
+plt.xlim([0, 256])
+plt.show()
+```
+
+Bu örnekte `cv2.cvtColor()` fonksiyonu ile görüntü gri seviyeye dönüştürülmüştür. Daha sonra `cv2.calcHist()` fonksiyonu ile gri seviye görüntünün histogramı hesaplanmıştır.
+
+```python
+hist = cv2.calcHist([gray], [0], None, [256], [0, 256])
+```
+
+Bu satırda:
+
+```text
+[gray]      -> histogramı alınacak görüntü
+[0]         -> kullanılacak kanal
+None        -> maske kullanılmayacak
+[256]       -> 256 farklı piksel değeri incelenecek
+[0, 256]    -> piksel değer aralığı
+```
+
+Histogram analizi özellikle görüntü iyileştirme işlemlerinden önce faydalıdır. Örneğin bir görüntünün karanlık olup olmadığını, kontrastının düşük olup olmadığını veya parlaklık değerlerinin belirli bir aralıkta sıkışıp sıkışmadığını anlamak için kullanılabilir.
+
+## Histogram Equalization / Histogram Eşitleme
+
+Histogram eşitleme, görüntünün kontrastını artırmak için kullanılan temel görüntü iyileştirme yöntemlerinden biridir. Bu yöntemde piksel yoğunluk değerleri daha geniş bir aralığa yayılmaya çalışılır.
+
+Özellikle düşük kontrastlı görüntülerde detayların daha belirgin hale gelmesine yardımcı olabilir.
+
+OpenCV'de histogram eşitleme işlemi için `cv2.equalizeHist()` fonksiyonu kullanılır.
+
+Bu fonksiyon genellikle gri seviye görüntüler üzerinde uygulanır.
+
+Aşağıdaki örnekte bir görüntü gri seviyeye çevrilmiş ve histogram eşitleme uygulanmıştır:
+
+```python
+import cv2
+import matplotlib.pyplot as plt
+
+img = cv2.imread("./images/bricks.jpg")
+
+if img is None:
+    raise FileNotFoundError("Image could not be loaded.")
+
+gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+
+equalized = cv2.equalizeHist(gray)
+
+plt.figure(figsize=(12, 6))
+
+plt.subplot(1, 2, 1)
+plt.imshow(gray, cmap="gray")
+plt.title("Original Grayscale Image")
+plt.axis("off")
+
+plt.subplot(1, 2, 2)
+plt.imshow(equalized, cmap="gray")
+plt.title("Histogram Equalized Image")
+plt.axis("off")
+
+plt.show()
+```
+
+Bu örnekte `gray` orijinal gri seviye görüntüyü, `equalized` ise histogram eşitleme uygulanmış görüntüyü temsil eder.
+
+Histogram eşitleme işleminden sonra görüntüdeki kontrast artabilir ve daha önce zor görülen bazı detaylar daha belirgin hale gelebilir.
+
+Orijinal ve eşitlenmiş görüntünün histogramlarını karşılaştırmak için şu kod kullanılabilir:
+
+```python
+import cv2
+import matplotlib.pyplot as plt
+
+img = cv2.imread("./images/bricks.jpg")
+
+if img is None:
+    raise FileNotFoundError("Image could not be loaded.")
+
+gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+
+equalized = cv2.equalizeHist(gray)
+
+hist_original = cv2.calcHist([gray], [0], None, [256], [0, 256])
+hist_equalized = cv2.calcHist([equalized], [0], None, [256], [0, 256])
+
+plt.figure(figsize=(12, 5))
+
+plt.subplot(1, 2, 1)
+plt.plot(hist_original)
+plt.title("Original Histogram")
+plt.xlabel("Pixel Intensity")
+plt.ylabel("Number of Pixels")
+plt.xlim([0, 256])
+
+plt.subplot(1, 2, 2)
+plt.plot(hist_equalized)
+plt.title("Equalized Histogram")
+plt.xlabel("Pixel Intensity")
+plt.ylabel("Number of Pixels")
+plt.xlim([0, 256])
+
+plt.show()
+```
+
+Histogram eşitleme sonucunda piksel değerleri daha geniş bir alana yayılabilir. Bu durum görüntünün kontrastını artırabilir.
+
+Ancak histogram eşitleme her zaman en iyi sonucu vermez. Bazı görüntülerde aşırı kontrast artışı, gürültünün belirginleşmesi veya doğal olmayan görüntü oluşması gibi sorunlara yol açabilir.
+
+Bu nedenle histogram eşitleme özellikle düşük kontrastlı görüntülerde dikkatli kullanılmalıdır.
+
+## Renkli Görüntülerde Histogram
+
+Renkli görüntülerde her kanal için ayrı histogram hesaplanabilir. OpenCV görüntüleri varsayılan olarak `BGR` formatında tuttuğu için renk kanalları şu şekildedir:
+
+```text
+0 -> Blue
+1 -> Green
+2 -> Red
+```
+
+Aşağıdaki örnekte renkli bir görüntünün BGR kanallarına ait histogramları çizdirilmiştir:
+
+```python
+import cv2
+import matplotlib.pyplot as plt
+
+img = cv2.imread("./images/bricks.jpg")
+
+if img is None:
+    raise FileNotFoundError("Image could not be loaded.")
+
+channels = ["Blue", "Green", "Red"]
+
+plt.figure(figsize=(10, 5))
+
+for i, channel_name in enumerate(channels):
+    hist = cv2.calcHist([img], [i], None, [256], [0, 256])
+    plt.plot(hist, label=channel_name)
+
+plt.title("Color Histogram")
+plt.xlabel("Pixel Intensity")
+plt.ylabel("Number of Pixels")
+plt.xlim([0, 256])
+plt.legend()
+plt.show()
+```
+
+Renkli görüntülerde histogram eşitleme yapılırken her BGR kanalına ayrı ayrı eşitleme uygulamak her zaman doğru sonuç vermeyebilir. Çünkü renk dengesi bozulabilir.
+
+Bu nedenle renkli görüntülerde genellikle görüntü farklı bir renk uzayına çevrilir ve sadece parlaklık kanalı üzerinde işlem yapılır. Örneğin `YCrCb` renk uzayında `Y` kanalı parlaklık bilgisini temsil eder.
+
+## Gamma Correction ile Histogram Equalization Farkı
+
+Gamma Correction ve Histogram Equalization ikisi de görüntü iyileştirme amacıyla kullanılabilir. Ancak çalışma mantıkları farklıdır.
+
+```text
+Gamma Correction:
+Piksel değerlerini doğrusal olmayan bir kuvvet dönüşümü ile değiştirir.
+Özellikle karanlık veya parlak görüntülerin parlaklık seviyesini düzenlemek için kullanılabilir.
+
+Histogram Equalization:
+Piksel değerlerinin dağılımını daha geniş bir aralığa yaymaya çalışır.
+Özellikle düşük kontrastlı görüntülerde detayları belirginleştirmek için kullanılabilir.
+```
+
+Kısaca:
+
+```text
+Gamma Correction       -> parlaklık düzenleme
+Histogram Equalization -> kontrast artırma
+```
+
+Tez kapsamında histogram analizi, görüntülerin parlaklık ve kontrast durumunu incelemek için kullanılabilir. Histogram Equalization ise düşük kontrastlı otonom araç görüntülerinde detayların daha görünür hale getirilmesi için denenebilecek temel görüntü iyileştirme yöntemlerinden biridir.
