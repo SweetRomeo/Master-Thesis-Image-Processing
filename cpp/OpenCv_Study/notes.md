@@ -702,3 +702,120 @@ if (mean_brightness < 80) {
 ```
 
 Kısaca, parlaklık tespiti görüntünün düşük ışıklı olup olmadığını anlamak için kullanılabilir. Bu sayede görüntü iyileştirme algoritmaları daha bilinçli ve kontrollü bir şekilde uygulanabilir.
+
+## OpenCV'de Kamera İşlemleri
+
+OpenCV'de kameradan görüntü okuma işlemi, gerçek zamanlı görüntü işleme uygulamalarında sıkça kullanılan temel işlemlerden biridir. Bu işlem için OpenCV'nin `cv::VideoCapture` sınıfı kullanılır.
+
+Kamerayı açmak için `cv::VideoCapture` türünden bir nesne oluşturulur. Aşağıdaki örnekte `0` değeri kullanılmıştır:
+
+```cpp
+cv::VideoCapture cap(0);
+```
+
+Buradaki `0`, bilgisayardaki varsayılan kamerayı ifade eder. Eğer harici bir kamera kullanılacaksa bazı sistemlerde `1`, `2` gibi farklı indeksler denenebilir.
+
+Kamera başarıyla açılıp açılmadığını kontrol etmek için `isOpened()` fonksiyonu kullanılır:
+
+```c++
+if (!cap.isOpened()) {
+    std::cerr << "Unable to open camera\n";
+    return -1;
+}
+```
+
+Kameradan gelen görüntüler OpenCV'de `cv::Mat` nesnesi içinde tutulur. Her döngüde kameradan yeni bir frame okunur ve bu frame üzerinde görüntü işleme işlemleri yapılabilir.
+
+Aşağıdaki örnekte kameradan sürekli görüntü alınmakta, alınan görüntü gri tona çevrilmekte ve ekranda gösterilmektedir:
+
+```c++
+#include <iostream>
+#include <opencv2/opencv.hpp>
+
+int main()
+{
+    cv::VideoCapture cap(0);
+
+    if (!cap.isOpened()) {
+        std::cerr << "Unable to open camera\n";
+        return -1;
+    }
+
+    int width = static_cast<int>(cap.get(cv::CAP_PROP_FRAME_WIDTH));
+    int height = static_cast<int>(cap.get(cv::CAP_PROP_FRAME_HEIGHT));
+
+    std::cout << "Camera resolution: " << width << "x" << height << '\n';
+
+    cv::Mat frame;
+    cv::Mat img_gray;
+
+    while (true) {
+        cap >> frame;
+
+        if (frame.empty()) {
+            std::cerr << "Empty frame received\n";
+            break;
+        }
+
+        cv::cvtColor(frame, img_gray, cv::COLOR_BGR2GRAY);
+
+        cv::imshow("Gray Camera", img_gray);
+
+        if ((cv::waitKey(1) & 0xFF) == 'q') {
+            break;
+        }
+    }
+
+    cap.release();
+    cv::destroyAllWindows();
+
+    return 0;
+}
+```
+
+### Kodun Açıklaması
+
+```cpp
+cv::VideoCapture cap(0);
+```
+
+Varsayılan kamerayı açar.
+
+```cpp
+cap >> frame;
+```
+
+Kameradan bir görüntü karesi okur ve `frame` değişkenine aktarır.
+
+```cpp
+if (frame.empty())
+```
+
+Kameradan görüntü okunamazsa programın hata vermemesi için kontrol yapılır.
+
+```cpp
+cv::cvtColor(frame, img_gray, cv::COLOR_BGR2GRAY);
+```
+
+Kameradan gelen renkli görüntüyü gri tonlamalı görüntüye çevirir.
+
+```cpp
+cv::imshow("Gray Camera", img_gray);
+```
+
+Gri tonlamalı görüntüyü ekranda gösterir.
+
+```cpp
+if ((cv::waitKey(1) & 0xFF) == 'q')
+```
+
+Her kareden sonra 1 milisaniye bekler ve klavyeden `q` tuşuna basılıp basılmadığını kontrol eder. `q` tuşuna basılırsa döngü sonlanır.
+
+```cpp
+cap.release();
+cv::destroyAllWindows();
+```
+
+Kamera serbest bırakılır ve OpenCV tarafından açılan tüm pencereler kapatılır.
+
+Bu yapı, gerçek zamanlı görüntü işleme uygulamalarının temelini oluşturur. Kameradan alınan `frame` üzerinde gri tonlama dışında bulanıklaştırma, kenar tespiti, eşikleme, yüz tespiti veya nesne algılama gibi farklı işlemler de uygulanabilir.

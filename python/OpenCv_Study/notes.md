@@ -699,3 +699,5 @@ Histogram Equalization -> kontrast artırma
 ```
 
 Tez kapsamında histogram analizi, görüntülerin parlaklık ve kontrast durumunu incelemek için kullanılabilir. Histogram Equalization ise düşük kontrastlı otonom araç görüntülerinde detayların daha görünür hale getirilmesi için denenebilecek temel görüntü iyileştirme yöntemlerinden biridir.
+
+## 

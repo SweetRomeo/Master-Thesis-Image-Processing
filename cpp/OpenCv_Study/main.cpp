@@ -3,33 +3,40 @@
 
 int main()
 {
-    cv::Mat img = cv::imread("./images/dog_backpack.jpg");
+    cv::VideoCapture cap(0);
 
-    if (img.empty()) {
-        std::cout << "Image could not be loaded.\n";
+    if (!cap.isOpened()) {
+        std::cerr << "Unable to open camera\n";
         return -1;
     }
 
-    cv::Mat gray;
-    cv::cvtColor(img, gray, cv::COLOR_BGR2GRAY);
+    int width = static_cast<int>(cap.get(cv::CAP_PROP_FRAME_WIDTH));
+    int height = static_cast<int>(cap.get(cv::CAP_PROP_FRAME_HEIGHT));
 
-    cv::Mat thresholded;
+    std::cout << "Camera resolution: " << width << "x" << height << '\n';
 
-    double used_threshold = cv::threshold(
-        gray,
-        thresholded,
-        127,
-        255,
-        cv::THRESH_BINARY
-    );
+    cv::Mat frame;
+    cv::Mat img_gray;
 
-    std::cout << "Used threshold value: " << used_threshold << '\n';
+    while (true) {
+        cap >> frame;
 
-    cv::imshow("Original Image", img);
-    cv::imshow("Grayscale Image", gray);
-    cv::imshow("Thresholded Image", thresholded);
+        if (frame.empty()) {
+            std::cerr << "Empty frame received\n";
+            break;
+        }
 
-    cv::waitKey(0);
+        cv::cvtColor(frame, img_gray, cv::COLOR_BGR2GRAY);
+
+        cv::imshow("Gray Camera", img_gray);
+
+        if ((cv::waitKey(1) & 0xFF) == 'q') {
+            break;
+        }
+    }
+
+    cap.release();
+    cv::destroyAllWindows();
 
     return 0;
 }
