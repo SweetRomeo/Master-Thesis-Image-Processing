@@ -700,4 +700,16 @@ Histogram Equalization -> kontrast artırma
 
 Tez kapsamında histogram analizi, görüntülerin parlaklık ve kontrast durumunu incelemek için kullanılabilir. Histogram Equalization ise düşük kontrastlı otonom araç görüntülerinde detayların daha görünür hale getirilmesi için denenebilecek temel görüntü iyileştirme yöntemlerinden biridir.
 
-## 
+## OpenCV'de Kamera İşlemleri(Camera Operations)
+
+OpenCV'de kameradan görüntü okuma işlemi, gerçek zamanlı görüntü işleme uygulamalarında sıkça kullanılan temel işlemlerden biridir. Bu işlem için OpenCV'nin `cv::VideoCapture` sınıfı kullanılır.
+
+Kamerayı açmak için `cv::VideoCapture` türünden bir nesne oluşturulur. Aşağıdaki örnekte `0` değeri kullanılmıştır:
+
+```cpp
+cv::VideoCapture cap(0);
+```
+
+Buradaki `0`, bilgisayardaki varsayılan kamerayı ifade eder. Eğer harici bir kamera kullanılacaksa bazı sistemlerde `1`, `2` gibi farklı indeksler denenebilir.
+
+Kamera başarıyla açılıp açılmadığını kontrol etmek için `isOpened()` fonksiyonu kullanılır:
